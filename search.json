@@ -175,6 +175,171 @@
     ]
   },
   {
+    "objectID": "ica/03-univariate-viz-exercises.html",
+    "href": "ica/03-univariate-viz-exercises.html",
+    "title": "Univariate Viz — Exercises",
+    "section": "",
+    "text": "Setup\nLoad the data first.\nCode# Import data\nhikes &lt;- read.csv(\"https://mac-stat.github.io/data/high_peaks.csv\")",
+    "crumbs": [
+      "In-Class Activities",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Univariate Viz — Exercises</span>"
+    ]
+  },
+  {
+    "objectID": "ica/03-univariate-viz-exercises.html#exercise-1-research-questions",
+    "href": "ica/03-univariate-viz-exercises.html#exercise-1-research-questions",
+    "title": "Univariate Viz — Exercises",
+    "section": "Exercise 1: Research Questions",
+    "text": "Exercise 1: Research Questions\nLet’s dig into the hikes data, starting with the elevation and difficulty ratings of the hikes:\n\nCodehead(hikes)\n\n             peak elevation difficulty ascent length time    rating\n1     Mt. Marcy        5344          5   3166   14.8 10.0  moderate\n2 Algonquin Peak       5114          5   2936    9.6  9.0  moderate\n3   Mt. Haystack       4960          7   3570   17.8 12.0 difficult\n4   Mt. Skylight       4926          7   4265   17.9 15.0 difficult\n5 Whiteface Mtn.       4867          4   2535   10.4  8.5      easy\n6       Dix Mtn.       4857          5   2800   13.2 10.0  moderate\n\n\n\nWhat features would we like a visualization of the categorical difficulty rating variable to capture? &gt; we would like to visualize the capability of it being easy to heard rating.\nWhat about a visualization of the quantitative elevation variable? &gt; we would like to see the elevation, ascent, and lencgth.",
+    "crumbs": [
+      "In-Class Activities",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Univariate Viz — Exercises</span>"
+    ]
+  },
+  {
+    "objectID": "ica/03-univariate-viz-exercises.html#exercise-2-load-tidyverse",
+    "href": "ica/03-univariate-viz-exercises.html#exercise-2-load-tidyverse",
+    "title": "Univariate Viz — Exercises",
+    "section": "Exercise 2: Load tidyverse",
+    "text": "Exercise 2: Load tidyverse\nWe’ll address the above questions using ggplot tools. Try running the following chunk and simply take note of the error message – this is one you’ll get a lot!\n\nCode# Use the ggplot function\nggplot(hikes, aes(x = rating))\n\n\n\n\n\n\n\nIn order to use ggplot tools, we have to first load the tidyverse package in which they live. We’ve installed the package but we need to tell R when we want to use it. Run the chunk below to load the library. You’ll need to do this within any .qmd file that uses ggplot().",
+    "crumbs": [
+      "In-Class Activities",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Univariate Viz — Exercises</span>"
+    ]
+  },
+  {
+    "objectID": "ica/03-univariate-viz-exercises.html#exercise-3-bar-chart-of-ratings---part-1",
+    "href": "ica/03-univariate-viz-exercises.html#exercise-3-bar-chart-of-ratings---part-1",
+    "title": "Univariate Viz — Exercises",
+    "section": "Exercise 3: Bar Chart of Ratings - Part 1",
+    "text": "Exercise 3: Bar Chart of Ratings - Part 1\nConsider some specific research questions about the difficulty rating of the hikes:\n\nHow many hikes fall into each category? &gt; fits 3\nAre the hikes evenly distributed among these categories, or are some more common than others? &gt; the hikes are distributed by elevation\n\nAll of these questions can be answered with: (1) a bar chart; of (2) the categorical data recorded in the rating column. First, set up the plotting frame:\n\nCodeggplot(hikes, aes(x = rating))\n\n\n\n\n\n\n\nThink about:\n\nWhat did this do? What do you observe? &gt; when running the function with tidyverse, it made the function go through. Then, runnning the second function, it gave me a graph of x and y with titles of parts of the data given.\nWhat, in general, is the first argument of the ggplot() function? &gt; this function grouped a specific column from the data, in this case the moderate and rating.\nWhat is the purpose of writing x = rating? &gt; the x would mean the x-axis title.\nWhat do you think aes stands for?!? &gt; stands for aesthetic.",
+    "crumbs": [
+      "In-Class Activities",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Univariate Viz — Exercises</span>"
+    ]
+  },
+  {
+    "objectID": "ica/03-univariate-viz-exercises.html#exercise-4-bar-chart-of-ratings---part-2",
+    "href": "ica/03-univariate-viz-exercises.html#exercise-4-bar-chart-of-ratings---part-2",
+    "title": "Univariate Viz — Exercises",
+    "section": "Exercise 4: Bar Chart of Ratings - Part 2",
+    "text": "Exercise 4: Bar Chart of Ratings - Part 2\nNow let’s add a geometric layer to the frame / canvas, and start customizing the plot’s theme. To this end, try each chunk below, one by one. In each chunk, make a comment about how both the code and the corresponding plot both changed.\nNOTE:\n\nPay attention to the general code properties and structure, not memorization.\nNot all of these are “good” plots. We’re just exploring ggplot.\n\n\nCode# what i observed is the x and y axis displayed for data next\nggplot(hikes, aes(x = rating)) +\n  geom_bar()\n\n\n\n\n\n\n\n\nCode# bar chart visual\nggplot(hikes, aes(x = rating)) +\n  geom_bar() +\n  labs(x = \"Rating\", y = \"Number of hikes\")\n\n\n\n\n\n\n\n\nCode# titles for x and y axis\nggplot(hikes, aes(x = rating)) +\n  geom_bar(fill = \"blue\") +\n  labs(x = \"Rating\", y = \"Number of hikes\")\n\n\n\n\n\n\n\n\nCode# color coded bar graph\nggplot(hikes, aes(x = rating)) +\n  geom_bar(color = \"orange\", fill = \"blue\") +\n  labs(x = \"Rating\", y = \"Number of hikes\")\n\n\n\n\n\n\n\n\nCode# outlining the blue data\nggplot(hikes, aes(x = rating)) +\n  geom_bar(color = \"orange\", fill = \"blue\")  +\n  labs(x = \"Rating\", y = \"Number of hikes\") +\n  theme_minimal()",
+    "crumbs": [
+      "In-Class Activities",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Univariate Viz — Exercises</span>"
+    ]
+  },
+  {
+    "objectID": "ica/03-univariate-viz-exercises.html#exercise-5-bar-chart-follow-up",
+    "href": "ica/03-univariate-viz-exercises.html#exercise-5-bar-chart-follow-up",
+    "title": "Univariate Viz — Exercises",
+    "section": "Exercise 5: Bar Chart Follow-up",
+    "text": "Exercise 5: Bar Chart Follow-up\nPart a\nReflect on the ggplot() code.\n\nWhat’s the purpose of the +? When do we use it? &gt; the + is more to add another function in the same area\nWe added the bars using geom_bar()? Why “geom”? &gt;start customizing the plot’s theme\nWhat does labs() stand for? &gt;customize x and y axis\nWhat’s the difference between color and fill? &gt;color is the outline and fill is to make a graph a certain color on the inside\nPart b\nIn general, bar charts allow us to examine the following properties of a categorical variable:\n\n\nobserved categories: What categories did we observe? &gt;observed the labs custimizing with geon bar graph\n\nvariability between categories: Are observations evenly spread out among the categories, or are some categories more common than others? &gt; evenly spread out to lowest to highest depending on data We must then translate this information into the context of our analysis, here hikes in the Adirondacks. Summarize below what you learned from the bar chart, in context. &gt; learned that throughout the bar chart, there are different ways to color code, and themes of which data you want to show.\nPart c\nIs there anything you don’t like about this barplot? For example: check out the x-axis again. &gt; change spacing bewteen titles and numbers",
+    "crumbs": [
+      "In-Class Activities",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Univariate Viz — Exercises</span>"
+    ]
+  },
+  {
+    "objectID": "ica/03-univariate-viz-exercises.html#exercise-6-sad-bar-chart",
+    "href": "ica/03-univariate-viz-exercises.html#exercise-6-sad-bar-chart",
+    "title": "Univariate Viz — Exercises",
+    "section": "Exercise 6: Sad Bar Chart",
+    "text": "Exercise 6: Sad Bar Chart\nLet’s now consider some research questions related to the quantitative elevation variable:\n\nAmong the hikes, what’s the range of elevation and how are the hikes distributed within this range (eg, evenly, in clumps, “normally”)? &gt; The hikes are distrubted highest to lowest, and the other data like length, and rating is out of order.\nWhat’s a typical elevation? &gt; moderate\nAre there any outliers, ie, hikes that have unusually high or low elevations? &gt; the Algonquin Peak was 9.6 which is the lowest out of the highest points of elevation.\n\nHere:\n\nConstruct a bar chart of the quantitative elevation variable.\nExplain why this might not be an effective visualization for this and other quantitative variables. (What questions does / doesn’t it help answer?) &gt; not a effective visalization because it would be guessing an exact range of elevation point.\n\n\nCodeggplot(hikes, aes(x = elevation)) +\n  geom_bar(color = \"orange\", fill = \"blue\")",
+    "crumbs": [
+      "In-Class Activities",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Univariate Viz — Exercises</span>"
+    ]
+  },
+  {
+    "objectID": "ica/03-univariate-viz-exercises.html#exercise-7-a-histogram-of-elevation",
+    "href": "ica/03-univariate-viz-exercises.html#exercise-7-a-histogram-of-elevation",
+    "title": "Univariate Viz — Exercises",
+    "section": "Exercise 7: A Histogram of Elevation",
+    "text": "Exercise 7: A Histogram of Elevation\nQuantitative variables require different viz than categorical variables. Especially when there are many possible outcomes of the quantitative variable. It’s typically insufficient to simply count up the number of times we’ve observed a particular outcome as the bar graph did above. It gives us a sense of ranges and typical outcomes, but not a good sense of how the observations are distributed across this range. We’ll explore two methods for graphing quantitative variables: histograms and density plots.\nHistograms are constructed by (1) dividing up the observed range of the variable into ‘bins’ of equal width; and (2) counting up the number of cases that fall into each bin. Check out the example below:\n\nPart a\nLet’s dig into some details.\n\nHow many hikes have an elevation between 4500 and 4700 feet? &gt; Total hikes an elevation between 4500 and 4700 is 5 close to 6.\nHow many total hikes have an elevation of at least 5100 feet? &gt; Total hikes of the elevation of 5100 is 2, close to 2.5.\nPart b\nNow the bigger picture. In general, histograms allow us to examine the following properties of a quantitative variable:\n\n\ntypical outcome: Where’s the center of the data points? What’s typical? &gt; typical outcomes would range from 5.2 to 7.5\n\nvariability & range: How spread out are the outcomes? What are the max and min outcomes? &gt; the outcomes are spreaded out, there is the highest at 10, being the highest and 1, being the lowest.\n\nshape: How are values distributed along the observed range? Is the distribution symmetric, right-skewed, left-skewed, bi-modal, or uniform (flat)? &gt; firstly bi-modal the right-skewed\n\noutliers: Are there any outliers, ie, outcomes that are unusually large/small? &gt; only outlier is the highest point of hikes being 10, while others are lower.\n\nWe must then translate this information into the context of our analysis, here hikes in the Adirondacks. Addressing each of the features in the above list, summarize below what you learned from the histogram, in context. &gt; I learned that the histogram is similar to bar chart",
+    "crumbs": [
+      "In-Class Activities",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Univariate Viz — Exercises</span>"
+    ]
+  },
+  {
+    "objectID": "ica/03-univariate-viz-exercises.html#exercise-8-building-histograms---part-1",
+    "href": "ica/03-univariate-viz-exercises.html#exercise-8-building-histograms---part-1",
+    "title": "Univariate Viz — Exercises",
+    "section": "Exercise 8: Building Histograms - Part 1",
+    "text": "Exercise 8: Building Histograms - Part 1\n2-MINUTE CHALLENGE: Thinking of the bar chart code, try to intuit what line you can tack on to the below frame of elevation to add a histogram layer. Don’t forget a +. If it doesn’t come to you within 2 minutes, no problem – all will be revealed in the next exercise.\n\nCodeggplot(hikes, aes(x = elevation))",
+    "crumbs": [
+      "In-Class Activities",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Univariate Viz — Exercises</span>"
+    ]
+  },
+  {
+    "objectID": "ica/03-univariate-viz-exercises.html#exercise-9-building-histograms---part-2",
+    "href": "ica/03-univariate-viz-exercises.html#exercise-9-building-histograms---part-2",
+    "title": "Univariate Viz — Exercises",
+    "section": "Exercise 9: Building Histograms - Part 2",
+    "text": "Exercise 9: Building Histograms - Part 2\nLet’s build some histograms. Try each chunk below, one by one. In each chunk, make a comment about how both the code and the corresponding plot both changed.\n\nCode# this histogram graph shows more of the data conjoined with other similar data points, yet, there are outliers\nggplot(hikes, aes(x = elevation)) +\n  geom_histogram()\n\n\n\n\n\n\n\n\nCode# bar graph is separated \nggplot(hikes, aes(x = elevation)) +\n  geom_histogram(color = \"white\") \n\n\n\n\n\n\n\n\nCode# the change was how we view the graph to resemble more what we see in the data.\nggplot(hikes, aes(x = elevation)) +\n  geom_histogram(color = \"white\", fill = \"blue\") \n\n\n\n\n\n\n\n\nCode# elevation title includes feet used, and specifies on y-axis of number of hikes\nggplot(hikes, aes(x = elevation)) +\n  geom_histogram(color = \"white\") +\n  labs(x = \"Elevation (feet)\", y = \"Number of hikes\")\n\n\n\n\n\n\n\n\nCode# only specifies on two ranges of elevation making the bar chart bigger and now you cannot see the line across an exact elevation.\nggplot(hikes, aes(x = elevation)) +\n  geom_histogram(color = \"white\", binwidth = 1000) +\n  labs(x = \"Elevation (feet)\", y = \"Number of hikes\")\n\n\n\n\n\n\n\n\nCode# this chart is harder to idetify data of elevation due to the lines being very thin, the width used is too small. \nggplot(hikes, aes(x = elevation)) +\n  geom_histogram(color = \"white\", binwidth = 5) +\n  labs(x = \"Elevation (feet)\", y = \"Number of hikes\")\n\n\n\n\n\n\n\n\nCode# has ranges of elevetion and the width is bigger\nggplot(hikes, aes(x = elevation)) +\n  geom_histogram(color = \"white\", binwidth = 200) +\n  labs(x = \"Elevation (feet)\", y = \"Number of hikes\")",
+    "crumbs": [
+      "In-Class Activities",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Univariate Viz — Exercises</span>"
+    ]
+  },
+  {
+    "objectID": "ica/03-univariate-viz-exercises.html#exercise-10-histogram-follow-up",
+    "href": "ica/03-univariate-viz-exercises.html#exercise-10-histogram-follow-up",
+    "title": "Univariate Viz — Exercises",
+    "section": "Exercise 10: Histogram Follow-up",
+    "text": "Exercise 10: Histogram Follow-up\n\nWhat function added the histogram layer / geometry? &gt; the function that added the histogram layer would be the geom_histogram.\nWhat’s the difference between color and fill? &gt; the colo would be the lines that seprate each bar data and fill is to add color to the bars fully of the chart.\nWhy does adding color = \"white\" improve the visualization? &gt; seperates data, easy to see\nWhat did binwidth do? &gt; set width of each bar\nWhy does the histogram become ineffective if the binwidth is too big (eg, 1000 feet)? &gt; too large of range, unclear\nWhy does the histogram become ineffective if the binwidth is too small (eg, 5 feet)? &gt; too hard to see, unclear",
+    "crumbs": [
+      "In-Class Activities",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Univariate Viz — Exercises</span>"
+    ]
+  },
+  {
+    "objectID": "ica/03-univariate-viz-exercises.html#exercise-11-density-plots",
+    "href": "ica/03-univariate-viz-exercises.html#exercise-11-density-plots",
+    "title": "Univariate Viz — Exercises",
+    "section": "Exercise 11: Density Plots",
+    "text": "Exercise 11: Density Plots\nDensity plots are essentially smooth versions of the histogram. Instead of sorting observations into discrete bins, the “density” of observations is calculated across the entire range of outcomes. The greater the number of observations, the greater the density! The density is then scaled so that the area under the density curve always equals 1 and the area under any fraction of the curve represents the fraction of cases that lie in that range.\nCheck out a density plot of elevation. Notice that the y-axis (density) has no contextual interpretation – it’s a relative measure. The higher the density, the more common are elevations in that range.\n\nCodeggplot(hikes, aes(x = elevation)) +\n  geom_density()\n\n\n\n\n\n\n\nQuestions\n\n\nINTUITION CHECK: Before tweaking the code and thinking back to geom_bar() and geom_histogram(), how do you anticipate the following code will change the plot? &gt; changing color could be to the graph being clearer to see\n\ngeom_density(color = \"blue\")\ngeom_density(fill = \"orange\")\n\n\nTRY IT! Test out those lines in the chunk below. Was your intuition correct?\n\n\nCodeggplot(hikes, aes(x = elevation)) +\n  geom_density(color = \"blue\", fill = \"orange\")\n\n\n\n\n\n\n\n\nExamine the density plot. How does it compare to the histogram? What does it tell you about the typical elevation, variability / range in elevations, and shape of the distribution of elevations within this range? &gt; it is different from the histogram because it shows more range through data, but it highlights the max and lowest points better",
+    "crumbs": [
+      "In-Class Activities",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Univariate Viz — Exercises</span>"
+    ]
+  },
+  {
+    "objectID": "ica/03-univariate-viz-exercises.html#exercise-12-density-plots-vs-histograms",
+    "href": "ica/03-univariate-viz-exercises.html#exercise-12-density-plots-vs-histograms",
+    "title": "Univariate Viz — Exercises",
+    "section": "Exercise 12: Density Plots vs Histograms",
+    "text": "Exercise 12: Density Plots vs Histograms\nThe histogram and density plot both allow us to visualize the behavior of a quantitative variable: typical outcome, variability / range, shape, and outliers. What are the pros/cons of each? What do you like/not like about each?\n\nHistograms cna be tricky if not organized well because of the binwidth range, and the density plot is tricky to specify on one point of the y-axis.",
+    "crumbs": [
+      "In-Class Activities",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Univariate Viz — Exercises</span>"
+    ]
+  },
+  {
+    "objectID": "ica/03-univariate-viz-exercises.html#exercise-13-code-communication",
+    "href": "ica/03-univariate-viz-exercises.html#exercise-13-code-communication",
+    "title": "Univariate Viz — Exercises",
+    "section": "Exercise 13: Code = communication",
+    "text": "Exercise 13: Code = communication\nWe obviously won’t be done until we talk about communication. All code above has a similar general structure (where the details can change):\n\nCode#ggplot(___, aes(x = ___)) + \n#  geom___(color = \"___\", fill = \"___\") + \n#  labs(x = \"___\", y = \"___\")\n\n\n\nThough not necessary to the code working, it’s common, good practice to indent or tab the lines of code after the first line (counterexample below). Why?\n\n\nCode# YUCK\nggplot(hikes, aes(x = elevation)) +\ngeom_histogram(color = \"white\", binwidth = 200) +\nlabs(x = \"Elevation (feet)\", y = \"Number of hikes\")\n\n\n\n\n\n\n\n\nThough not necessary to the code working, it’s common, good practice to put a line break after each + (counterexample below). Why? &gt;\n\n\nCode# YUCK \nggplot(hikes, aes(x = elevation)) + geom_histogram(color = \"white\", binwidth = 200) + labs(x = \"Elevation (feet)\", y = \"Number of hikes\")",
+    "crumbs": [
+      "In-Class Activities",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Univariate Viz — Exercises</span>"
+    ]
+  },
+  {
+    "objectID": "ica/03-univariate-viz-exercises.html#exercise-14-practice",
+    "href": "ica/03-univariate-viz-exercises.html#exercise-14-practice",
+    "title": "Univariate Viz — Exercises",
+    "section": "Exercise 14: Practice",
+    "text": "Exercise 14: Practice\nPart a\nPractice your viz skills to learn about some of the variables in one of the following datasets:\n\nCode# Data on students in this class\nsurvey &lt;- read.csv(\"https://hash-mac.github.io/ds112site-f26/data/survey.csv\")\n\nsurvey |&gt;\n  filter(minutes_to_campus &lt; 250) |&gt;\n  ggplot(aes(x = minutes_to_campus)) + \n  geom_histogram(color = \"white\", binwidth = 5) + \n  labs(x = \"minutes_to_campus\", y = \"count\")\n\n\n\n\n\n\nCodeggplot(survey, aes(x = fav_temp_c)) + \n  geom_histogram(color = \"white\", binwidth = 5) + \n  labs(x = \"fav_temp_c\", y = \"count\")\n\n\n\n\n\n\nCode# World Cup data\nworld_cup &lt;- read.csv(\"https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2022/2022-11-29/worldcups.csv\")\nggplot(world_cup, aes(x = year)) + \n  geom_histogram(color = \"white\", binwidth = 5) + \n  labs(x = \"year\", y = \"attendence\")\n\n\n\n\n\n\n\nPart b\nCheck out the RStudio Data Visualization cheat sheet to learn more features of ggplot.\n\n\n\n\n\n\nWarningCheck → Commit → Push\n\n\n\nWhen done, don’t forgot to click Render Book and check the resulting HTML files. If happy, jump to GitHub Desktop and commit the changes with the message Finish uni viz and push to GitHub. Wait few seconds, then visit your portfolio website and make sure the changes are there.",
+    "crumbs": [
+      "In-Class Activities",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Univariate Viz — Exercises</span>"
+    ]
+  },
+  {
     "objectID": "extra/extra-sample1.html",
     "href": "extra/extra-sample1.html",
     "title": "Extra Sample 1",
@@ -182,7 +347,7 @@
     "text": "Add content here",
     "crumbs": [
       "Extras",
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Extra Sample 1</span>"
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Extra Sample 1</span>"
     ]
   },
   {
@@ -193,7 +358,7 @@
     "text": "Add content here",
     "crumbs": [
       "Extras",
-      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Extra Sample 2</span>"
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Extra Sample 2</span>"
     ]
   }
 ]
