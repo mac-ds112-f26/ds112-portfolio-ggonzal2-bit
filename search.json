@@ -65,28 +65,6 @@
     ]
   },
   {
-    "objectID": "ica/ica-sample1.html",
-    "href": "ica/ica-sample1.html",
-    "title": "ICA Sample 1",
-    "section": "",
-    "text": "Add content here",
-    "crumbs": [
-      "In-Class Activities",
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>ICA Sample 1</span>"
-    ]
-  },
-  {
-    "objectID": "ica/ica-sample2.html",
-    "href": "ica/ica-sample2.html",
-    "title": "ICA Sample 2",
-    "section": "",
-    "text": "Add content here",
-    "crumbs": [
-      "In-Class Activities",
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>ICA Sample 2</span>"
-    ]
-  },
-  {
     "objectID": "ica/quarto-demo.html",
     "href": "ica/quarto-demo.html",
     "title": "My first Quarto document",
@@ -94,7 +72,7 @@
     "text": "Intro\nMacalester College is in the Twin Cities. It has:\nCheck it out for yourself:",
     "crumbs": [
       "In-Class Activities",
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>My first Quarto document</span>"
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>My first Quarto document</span>"
     ]
   },
   {
@@ -105,7 +83,7 @@
     "text": "four seasons\nbagpipes\ndelightful students",
     "crumbs": [
       "In-Class Activities",
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>My first Quarto document</span>"
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>My first Quarto document</span>"
     ]
   },
   {
@@ -116,7 +94,7 @@
     "text": "Exercise 1: Deduce Quarto features\nCheck out the appearance and contents of this document. Thoughts?\nIn the toolbar at the top of this document, Render the .qmd file into a .html file. Where is this file stored? Thoughts about its appearance / contents? Can you edit it?\nToggling between the .qmd and .html files, explain the purpose of the following features in the .qmd file:\n*\n**\n#\n-\n\\\n![](url)",
     "crumbs": [
       "In-Class Activities",
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>My first Quarto document</span>"
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>My first Quarto document</span>"
     ]
   },
   {
@@ -127,7 +105,7 @@
     "text": "Exercise 2: Code\nHow does this appear in the .qmd? The .html? So…?!\nseq(from = 100, to = 1000, by = 50)",
     "crumbs": [
       "In-Class Activities",
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>My first Quarto document</span>"
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>My first Quarto document</span>"
     ]
   },
   {
@@ -138,7 +116,7 @@
     "text": "Exercise 3: Chunks\nQuarto isn’t a mind reader – we must distinguish R code from text. We do so by putting code inside an R chunk:\n\nCodeseq()\n\n[1] 1\n\n\n\nPut the seq() code in the chunk.\nPress the green arrow in the top right of the chunk. What happens in the qmd?\nRender. What appears in the html: R code, output, or both? &gt; When rendering, it showed up on my console as [1] 1.",
     "crumbs": [
       "In-Class Activities",
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>My first Quarto document</span>"
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>My first Quarto document</span>"
     ]
   },
   {
@@ -149,7 +127,7 @@
     "text": "Exercise 4: Practice\n\nUse R code to create the following sequence: 10 10 10 10\nStore the sequence as four_tens.\nUse an R function (which we haven’t learned!) to add up the numbers in four_tens.\n\n\nCoderep(times = 4, x = 10)\n\n[1] 10 10 10 10",
     "crumbs": [
       "In-Class Activities",
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>My first Quarto document</span>"
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>My first Quarto document</span>"
     ]
   },
   {
@@ -160,7 +138,7 @@
     "text": "Exercise 5: Fix this code\nCode is a form of communication, and the code below doesn’t cut it.\nPut the code in a chunk and fix it.\n\nCoderep(x = 1, times = 10)\n\n [1] 1 1 1 1 1 1 1 1 1 1\n\nCodeseq(from= 100,to = 1000,length = 20)\n\n [1]  100.0000  147.3684  194.7368  242.1053  289.4737  336.8421  384.2105\n [8]  431.5789  478.9474  526.3158  573.6842  621.0526  668.4211  715.7895\n[15]  763.1579  810.5263  857.8947  905.2632  952.6316 1000.0000\n\n\nRep(x = 1, times = 10) seq(from=100,to=1000,length=20) theNumberofStudentsinthisclass&lt;-27",
     "crumbs": [
       "In-Class Activities",
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>My first Quarto document</span>"
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>My first Quarto document</span>"
     ]
   },
   {
@@ -171,7 +149,7 @@
     "text": "Exercise 6: Comments\nRun the chunk below. Notice that R ignores anything in a line starting with a pound sign (#). If we took the # away we’d get an error!\n\nCode# This is a comment\n4 + 5\n\n[1] 9\n\n\nWe’ll utilize this feature to comment our code, i.e. leave short notes about what our code is doing. Below, replace the ??? with an appropriate comment.\n\nCode# changing the degree of temperature from Farinheight to Celsius\ntemperature_c &lt;- 10\ntemperature_f &lt;- temperature_c * 9/5 + 32\ntemperature_f\n\n[1] 50",
     "crumbs": [
       "In-Class Activities",
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>My first Quarto document</span>"
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>My first Quarto document</span>"
     ]
   },
   {
@@ -182,7 +160,7 @@
     "text": "Setup\nLoad the data first.\nCode# Import data\nhikes &lt;- read.csv(\"https://mac-stat.github.io/data/high_peaks.csv\")",
     "crumbs": [
       "In-Class Activities",
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Univariate Viz — Exercises</span>"
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Univariate Viz — Exercises</span>"
     ]
   },
   {
@@ -193,7 +171,7 @@
     "text": "Exercise 1: Research Questions\nLet’s dig into the hikes data, starting with the elevation and difficulty ratings of the hikes:\n\nCodehead(hikes)\n\n             peak elevation difficulty ascent length time    rating\n1     Mt. Marcy        5344          5   3166   14.8 10.0  moderate\n2 Algonquin Peak       5114          5   2936    9.6  9.0  moderate\n3   Mt. Haystack       4960          7   3570   17.8 12.0 difficult\n4   Mt. Skylight       4926          7   4265   17.9 15.0 difficult\n5 Whiteface Mtn.       4867          4   2535   10.4  8.5      easy\n6       Dix Mtn.       4857          5   2800   13.2 10.0  moderate\n\n\n\nWhat features would we like a visualization of the categorical difficulty rating variable to capture? &gt; we would like to visualize the capability of it being easy to heard rating.\nWhat about a visualization of the quantitative elevation variable? &gt; we would like to see the elevation, ascent, and lencgth.",
     "crumbs": [
       "In-Class Activities",
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Univariate Viz — Exercises</span>"
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Univariate Viz — Exercises</span>"
     ]
   },
   {
@@ -204,7 +182,7 @@
     "text": "Exercise 2: Load tidyverse\nWe’ll address the above questions using ggplot tools. Try running the following chunk and simply take note of the error message – this is one you’ll get a lot!\n\nCode# Use the ggplot function\nggplot(hikes, aes(x = rating))\n\n\n\n\n\n\n\nIn order to use ggplot tools, we have to first load the tidyverse package in which they live. We’ve installed the package but we need to tell R when we want to use it. Run the chunk below to load the library. You’ll need to do this within any .qmd file that uses ggplot().",
     "crumbs": [
       "In-Class Activities",
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Univariate Viz — Exercises</span>"
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Univariate Viz — Exercises</span>"
     ]
   },
   {
@@ -215,7 +193,7 @@
     "text": "Exercise 3: Bar Chart of Ratings - Part 1\nConsider some specific research questions about the difficulty rating of the hikes:\n\nHow many hikes fall into each category? &gt; fits 3\nAre the hikes evenly distributed among these categories, or are some more common than others? &gt; the hikes are distributed by elevation\n\nAll of these questions can be answered with: (1) a bar chart; of (2) the categorical data recorded in the rating column. First, set up the plotting frame:\n\nCodeggplot(hikes, aes(x = rating))\n\n\n\n\n\n\n\nThink about:\n\nWhat did this do? What do you observe? &gt; when running the function with tidyverse, it made the function go through. Then, runnning the second function, it gave me a graph of x and y with titles of parts of the data given.\nWhat, in general, is the first argument of the ggplot() function? &gt; this function grouped a specific column from the data, in this case the moderate and rating.\nWhat is the purpose of writing x = rating? &gt; the x would mean the x-axis title.\nWhat do you think aes stands for?!? &gt; stands for aesthetic.",
     "crumbs": [
       "In-Class Activities",
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Univariate Viz — Exercises</span>"
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Univariate Viz — Exercises</span>"
     ]
   },
   {
@@ -223,10 +201,10 @@
     "href": "ica/03-univariate-viz-exercises.html#exercise-4-bar-chart-of-ratings---part-2",
     "title": "Univariate Viz — Exercises",
     "section": "Exercise 4: Bar Chart of Ratings - Part 2",
-    "text": "Exercise 4: Bar Chart of Ratings - Part 2\nNow let’s add a geometric layer to the frame / canvas, and start customizing the plot’s theme. To this end, try each chunk below, one by one. In each chunk, make a comment about how both the code and the corresponding plot both changed.\nNOTE:\n\nPay attention to the general code properties and structure, not memorization.\nNot all of these are “good” plots. We’re just exploring ggplot.\n\n\nCode# what i observed is the x and y axis displayed for data next\nggplot(hikes, aes(x = rating)) +\n  geom_bar()\n\n\n\n\n\n\n\n\nCode# bar chart visual\nggplot(hikes, aes(x = rating)) +\n  geom_bar() +\n  labs(x = \"Rating\", y = \"Number of hikes\")\n\n\n\n\n\n\n\n\nCode# titles for x and y axis\nggplot(hikes, aes(x = rating)) +\n  geom_bar(fill = \"blue\") +\n  labs(x = \"Rating\", y = \"Number of hikes\")\n\n\n\n\n\n\n\n\nCode# color coded bar graph\nggplot(hikes, aes(x = rating)) +\n  geom_bar(color = \"orange\", fill = \"blue\") +\n  labs(x = \"Rating\", y = \"Number of hikes\")\n\n\n\n\n\n\n\n\nCode# outlining the blue data\nggplot(hikes, aes(x = rating)) +\n  geom_bar(color = \"orange\", fill = \"blue\")  +\n  labs(x = \"Rating\", y = \"Number of hikes\") +\n  theme_minimal()",
+    "text": "Exercise 4: Bar Chart of Ratings - Part 2\nNow let’s add a geometric layer to the frame / canvas, and start customizing the plot’s theme. To this end, try each chunk below, one by one. In each chunk, make a comment about how both the code and the corresponding plot both changed.\nNOTE:\n\nPay attention to the general code properties and structure, not memorization.\nNot all of these are “good” plots. We’re just exploring ggplot.\n\n\nCode# what i observed is the x and y axis displayed for data next\nggplot(hikes, aes(x = rating,fill = \"lightpink\")) +\n  geom_bar()\n\n\n\n\n\n\n\n\nCode# bar chart visual\nggplot(hikes, aes(x = rating)) +\n  geom_bar() +\n  labs(x = \"Rating\", y = \"Number of hikes\")\n\n\n\n\n\n\n\n\nCode# titles for x and y axis\nggplot(hikes, aes(x = rating)) +\n  geom_bar(fill = \"blue\") +\n  labs(x = \"Rating\", y = \"Number of hikes\")\n\n\n\n\n\n\n\n\nCode# color coded bar graph\nggplot(hikes, aes(x = rating)) +\n  geom_bar(color = \"orange\", fill = \"blue\") +\n  labs(x = \"Rating\", y = \"Number of hikes\")\n\n\n\n\n\n\n\n\nCode# outlining the blue data\nggplot(hikes, aes(x = rating)) +\n  geom_bar(color = \"orange\", fill = \"blue\")  +\n  labs(x = \"Rating\", y = \"Number of hikes\") +\n  theme_minimal()",
     "crumbs": [
       "In-Class Activities",
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Univariate Viz — Exercises</span>"
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Univariate Viz — Exercises</span>"
     ]
   },
   {
@@ -237,7 +215,7 @@
     "text": "Exercise 5: Bar Chart Follow-up\nPart a\nReflect on the ggplot() code.\n\nWhat’s the purpose of the +? When do we use it? &gt; the + is more to add another function in the same area\nWe added the bars using geom_bar()? Why “geom”? &gt;start customizing the plot’s theme\nWhat does labs() stand for? &gt;customize x and y axis\nWhat’s the difference between color and fill? &gt;color is the outline and fill is to make a graph a certain color on the inside\nPart b\nIn general, bar charts allow us to examine the following properties of a categorical variable:\n\n\nobserved categories: What categories did we observe? &gt;observed the labs custimizing with geon bar graph\n\nvariability between categories: Are observations evenly spread out among the categories, or are some categories more common than others? &gt; evenly spread out to lowest to highest depending on data We must then translate this information into the context of our analysis, here hikes in the Adirondacks. Summarize below what you learned from the bar chart, in context. &gt; learned that throughout the bar chart, there are different ways to color code, and themes of which data you want to show.\nPart c\nIs there anything you don’t like about this barplot? For example: check out the x-axis again. &gt; change spacing bewteen titles and numbers",
     "crumbs": [
       "In-Class Activities",
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Univariate Viz — Exercises</span>"
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Univariate Viz — Exercises</span>"
     ]
   },
   {
@@ -248,7 +226,7 @@
     "text": "Exercise 6: Sad Bar Chart\nLet’s now consider some research questions related to the quantitative elevation variable:\n\nAmong the hikes, what’s the range of elevation and how are the hikes distributed within this range (eg, evenly, in clumps, “normally”)? &gt; The hikes are distrubted highest to lowest, and the other data like length, and rating is out of order.\nWhat’s a typical elevation? &gt; moderate\nAre there any outliers, ie, hikes that have unusually high or low elevations? &gt; the Algonquin Peak was 9.6 which is the lowest out of the highest points of elevation.\n\nHere:\n\nConstruct a bar chart of the quantitative elevation variable.\nExplain why this might not be an effective visualization for this and other quantitative variables. (What questions does / doesn’t it help answer?) &gt; not a effective visalization because it would be guessing an exact range of elevation point.\n\n\nCodeggplot(hikes, aes(x = elevation)) +\n  geom_bar(color = \"orange\", fill = \"blue\")",
     "crumbs": [
       "In-Class Activities",
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Univariate Viz — Exercises</span>"
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Univariate Viz — Exercises</span>"
     ]
   },
   {
@@ -259,7 +237,7 @@
     "text": "Exercise 7: A Histogram of Elevation\nQuantitative variables require different viz than categorical variables. Especially when there are many possible outcomes of the quantitative variable. It’s typically insufficient to simply count up the number of times we’ve observed a particular outcome as the bar graph did above. It gives us a sense of ranges and typical outcomes, but not a good sense of how the observations are distributed across this range. We’ll explore two methods for graphing quantitative variables: histograms and density plots.\nHistograms are constructed by (1) dividing up the observed range of the variable into ‘bins’ of equal width; and (2) counting up the number of cases that fall into each bin. Check out the example below:\n\nPart a\nLet’s dig into some details.\n\nHow many hikes have an elevation between 4500 and 4700 feet? &gt; Total hikes an elevation between 4500 and 4700 is 5 close to 6.\nHow many total hikes have an elevation of at least 5100 feet? &gt; Total hikes of the elevation of 5100 is 2, close to 2.5.\nPart b\nNow the bigger picture. In general, histograms allow us to examine the following properties of a quantitative variable:\n\n\ntypical outcome: Where’s the center of the data points? What’s typical? &gt; typical outcomes would range from 5.2 to 7.5\n\nvariability & range: How spread out are the outcomes? What are the max and min outcomes? &gt; the outcomes are spreaded out, there is the highest at 10, being the highest and 1, being the lowest.\n\nshape: How are values distributed along the observed range? Is the distribution symmetric, right-skewed, left-skewed, bi-modal, or uniform (flat)? &gt; firstly bi-modal the right-skewed\n\noutliers: Are there any outliers, ie, outcomes that are unusually large/small? &gt; only outlier is the highest point of hikes being 10, while others are lower.\n\nWe must then translate this information into the context of our analysis, here hikes in the Adirondacks. Addressing each of the features in the above list, summarize below what you learned from the histogram, in context. &gt; I learned that the histogram is similar to bar chart",
     "crumbs": [
       "In-Class Activities",
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Univariate Viz — Exercises</span>"
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Univariate Viz — Exercises</span>"
     ]
   },
   {
@@ -270,7 +248,7 @@
     "text": "Exercise 8: Building Histograms - Part 1\n2-MINUTE CHALLENGE: Thinking of the bar chart code, try to intuit what line you can tack on to the below frame of elevation to add a histogram layer. Don’t forget a +. If it doesn’t come to you within 2 minutes, no problem – all will be revealed in the next exercise.\n\nCodeggplot(hikes, aes(x = elevation))",
     "crumbs": [
       "In-Class Activities",
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Univariate Viz — Exercises</span>"
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Univariate Viz — Exercises</span>"
     ]
   },
   {
@@ -281,7 +259,7 @@
     "text": "Exercise 9: Building Histograms - Part 2\nLet’s build some histograms. Try each chunk below, one by one. In each chunk, make a comment about how both the code and the corresponding plot both changed.\n\nCode# this histogram graph shows more of the data conjoined with other similar data points, yet, there are outliers\nggplot(hikes, aes(x = elevation)) +\n  geom_histogram()\n\n\n\n\n\n\n\n\nCode# bar graph is separated \nggplot(hikes, aes(x = elevation)) +\n  geom_histogram(color = \"white\") \n\n\n\n\n\n\n\n\nCode# the change was how we view the graph to resemble more what we see in the data.\nggplot(hikes, aes(x = elevation)) +\n  geom_histogram(color = \"white\", fill = \"blue\") \n\n\n\n\n\n\n\n\nCode# elevation title includes feet used, and specifies on y-axis of number of hikes\nggplot(hikes, aes(x = elevation)) +\n  geom_histogram(color = \"white\") +\n  labs(x = \"Elevation (feet)\", y = \"Number of hikes\")\n\n\n\n\n\n\n\n\nCode# only specifies on two ranges of elevation making the bar chart bigger and now you cannot see the line across an exact elevation.\nggplot(hikes, aes(x = elevation)) +\n  geom_histogram(color = \"white\", binwidth = 1000) +\n  labs(x = \"Elevation (feet)\", y = \"Number of hikes\")\n\n\n\n\n\n\n\n\nCode# this chart is harder to idetify data of elevation due to the lines being very thin, the width used is too small. \nggplot(hikes, aes(x = elevation)) +\n  geom_histogram(color = \"white\", binwidth = 5) +\n  labs(x = \"Elevation (feet)\", y = \"Number of hikes\")\n\n\n\n\n\n\n\n\nCode# has ranges of elevetion and the width is bigger\nggplot(hikes, aes(x = elevation)) +\n  geom_histogram(color = \"white\", binwidth = 200) +\n  labs(x = \"Elevation (feet)\", y = \"Number of hikes\")",
     "crumbs": [
       "In-Class Activities",
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Univariate Viz — Exercises</span>"
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Univariate Viz — Exercises</span>"
     ]
   },
   {
@@ -292,7 +270,7 @@
     "text": "Exercise 10: Histogram Follow-up\n\nWhat function added the histogram layer / geometry? &gt; the function that added the histogram layer would be the geom_histogram.\nWhat’s the difference between color and fill? &gt; the colo would be the lines that seprate each bar data and fill is to add color to the bars fully of the chart.\nWhy does adding color = \"white\" improve the visualization? &gt; seperates data, easy to see\nWhat did binwidth do? &gt; set width of each bar\nWhy does the histogram become ineffective if the binwidth is too big (eg, 1000 feet)? &gt; too large of range, unclear\nWhy does the histogram become ineffective if the binwidth is too small (eg, 5 feet)? &gt; too hard to see, unclear",
     "crumbs": [
       "In-Class Activities",
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Univariate Viz — Exercises</span>"
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Univariate Viz — Exercises</span>"
     ]
   },
   {
@@ -303,7 +281,7 @@
     "text": "Exercise 11: Density Plots\nDensity plots are essentially smooth versions of the histogram. Instead of sorting observations into discrete bins, the “density” of observations is calculated across the entire range of outcomes. The greater the number of observations, the greater the density! The density is then scaled so that the area under the density curve always equals 1 and the area under any fraction of the curve represents the fraction of cases that lie in that range.\nCheck out a density plot of elevation. Notice that the y-axis (density) has no contextual interpretation – it’s a relative measure. The higher the density, the more common are elevations in that range.\n\nCodeggplot(hikes, aes(x = elevation)) +\n  geom_density()\n\n\n\n\n\n\n\nQuestions\n\n\nINTUITION CHECK: Before tweaking the code and thinking back to geom_bar() and geom_histogram(), how do you anticipate the following code will change the plot? &gt; changing color could be to the graph being clearer to see\n\ngeom_density(color = \"blue\")\ngeom_density(fill = \"orange\")\n\n\nTRY IT! Test out those lines in the chunk below. Was your intuition correct?\n\n\nCodeggplot(hikes, aes(x = elevation)) +\n  geom_density(color = \"blue\", fill = \"orange\")\n\n\n\n\n\n\n\n\nExamine the density plot. How does it compare to the histogram? What does it tell you about the typical elevation, variability / range in elevations, and shape of the distribution of elevations within this range? &gt; it is different from the histogram because it shows more range through data, but it highlights the max and lowest points better",
     "crumbs": [
       "In-Class Activities",
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Univariate Viz — Exercises</span>"
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Univariate Viz — Exercises</span>"
     ]
   },
   {
@@ -314,7 +292,7 @@
     "text": "Exercise 12: Density Plots vs Histograms\nThe histogram and density plot both allow us to visualize the behavior of a quantitative variable: typical outcome, variability / range, shape, and outliers. What are the pros/cons of each? What do you like/not like about each?\n\nHistograms cna be tricky if not organized well because of the binwidth range, and the density plot is tricky to specify on one point of the y-axis.",
     "crumbs": [
       "In-Class Activities",
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Univariate Viz — Exercises</span>"
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Univariate Viz — Exercises</span>"
     ]
   },
   {
@@ -325,7 +303,7 @@
     "text": "Exercise 13: Code = communication\nWe obviously won’t be done until we talk about communication. All code above has a similar general structure (where the details can change):\n\nCode#ggplot(___, aes(x = ___)) + \n#  geom___(color = \"___\", fill = \"___\") + \n#  labs(x = \"___\", y = \"___\")\n\n\n\nThough not necessary to the code working, it’s common, good practice to indent or tab the lines of code after the first line (counterexample below). Why?\n\n\nCode# YUCK\nggplot(hikes, aes(x = elevation)) +\ngeom_histogram(color = \"white\", binwidth = 200) +\nlabs(x = \"Elevation (feet)\", y = \"Number of hikes\")\n\n\n\n\n\n\n\n\nThough not necessary to the code working, it’s common, good practice to put a line break after each + (counterexample below). Why? &gt;\n\n\nCode# YUCK \nggplot(hikes, aes(x = elevation)) + geom_histogram(color = \"white\", binwidth = 200) + labs(x = \"Elevation (feet)\", y = \"Number of hikes\")",
     "crumbs": [
       "In-Class Activities",
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Univariate Viz — Exercises</span>"
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Univariate Viz — Exercises</span>"
     ]
   },
   {
@@ -336,7 +314,304 @@
     "text": "Exercise 14: Practice\nPart a\nPractice your viz skills to learn about some of the variables in one of the following datasets:\n\nCode# Data on students in this class\nsurvey &lt;- read.csv(\"https://hash-mac.github.io/ds112site-f26/data/survey.csv\")\n\nsurvey |&gt;\n  filter(minutes_to_campus &lt; 250) |&gt;\n  ggplot(aes(x = minutes_to_campus)) + \n  geom_histogram(color = \"white\", binwidth = 5) + \n  labs(x = \"minutes_to_campus\", y = \"count\")\n\n\n\n\n\n\nCodeggplot(survey, aes(x = fav_temp_c)) + \n  geom_histogram(color = \"white\", binwidth = 5) + \n  labs(x = \"fav_temp_c\", y = \"count\")\n\n\n\n\n\n\nCode# World Cup data\nworld_cup &lt;- read.csv(\"https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2022/2022-11-29/worldcups.csv\")\nggplot(world_cup, aes(x = year)) + \n  geom_histogram(color = \"white\", binwidth = 5) + \n  labs(x = \"year\", y = \"attendence\")\n\n\n\n\n\n\n\nPart b\nCheck out the RStudio Data Visualization cheat sheet to learn more features of ggplot.\n\n\n\n\n\n\nWarningCheck → Commit → Push\n\n\n\nWhen done, don’t forgot to click Render Book and check the resulting HTML files. If happy, jump to GitHub Desktop and commit the changes with the message Finish uni viz and push to GitHub. Wait few seconds, then visit your portfolio website and make sure the changes are there.",
     "crumbs": [
       "In-Class Activities",
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Univariate Viz — Exercises</span>"
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Univariate Viz — Exercises</span>"
+    ]
+  },
+  {
+    "objectID": "ica/04-bivariate-viz-exercises.html",
+    "href": "ica/04-bivariate-viz-exercises.html",
+    "title": "Bivariate Viz — Exercises",
+    "section": "",
+    "text": "Exercise 0: Review\nGithub user Tony McGovern has compiled and made available 2024/2020/2016/2012/2008 presidential election results for most of 3000+ U.S. counties, except Alaska. (Image:\nUS Counties. Source: Wikimedia Commons\nA wrangled version of this data, is imported below, after being combined with:\nWe’ll use this data to explore voting outcomes within the U.S.’s 2-party system. Here’s a list of candidates by year:",
+    "crumbs": [
+      "In-Class Activities",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Bivariate Viz — Exercises</span>"
+    ]
+  },
+  {
+    "objectID": "ica/04-bivariate-viz-exercises.html#exercise-0-review",
+    "href": "ica/04-bivariate-viz-exercises.html#exercise-0-review",
+    "title": "Bivariate Viz — Exercises",
+    "section": "",
+    "text": "Part a\nHow many, or roughly what percent, of the 3000+ counties did the Republican candidate win in 2020?\n\nTake a guess.\nThen make a plot of the winner variable.\nThen discuss what follow-up questions you might have (and that our data might help us answer).\n\n\nCodelibrary(ggplot2)\nggplot(elections, aes(x = winner_20)) +\n  geom_bar(fill = \"hotpink2\") +\n  labs(x = \"winner_20\", y = \"counties\")\n\n\n\n\n\n\n\nPart b\nThe repub_pct_20 variable provides more detail about the Republican support in each county. Construct a plot of repub_pct_20.\nNotice that the distribution of Republican support from county to county is slightly left skewed or negatively skewed. &gt; more right skewed\nWhat follow-up questions do you have?\n\nCodeggplot(elections, aes(x = repub_pct_20)) +\n  geom_histogram(fill = \"red1\", binwidth = 5) +\n  labs(x = \"repub_pct_20\", y = \"counties\")",
+    "crumbs": [
+      "In-Class Activities",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Bivariate Viz — Exercises</span>"
+    ]
+  },
+  {
+    "objectID": "ica/04-bivariate-viz-exercises.html#exercise-1-quantitative-vs-quantitative-intuition-check",
+    "href": "ica/04-bivariate-viz-exercises.html#exercise-1-quantitative-vs-quantitative-intuition-check",
+    "title": "Bivariate Viz — Exercises",
+    "section": "Exercise 1: Quantitative vs Quantitative Intuition Check",
+    "text": "Exercise 1: Quantitative vs Quantitative Intuition Check\n\n\n\n\n\n\nImportantBe Quick\n\n\n\nDon’t spend more than 3 minutes on this!\n\n\nBelow is a scatterplot of the Republican support in 2020 vs 2016. Notice that:\n\nboth variables are quantitative and get their own axes\nthe response variable is on the y-axis, demonstrating how repub_pct_20 might be predicted by repub_pct_16, not vice versa\n\nTry to replicate this using ggplot(). Think:\n\nWhat info do you need to set up the canvas? &gt; need the right ggplot, and see which data sets will fit.\nWhat geometric layer (geom_???) might add these dots / points for each county? We haven’t learned this yet, just take some guesses. &gt; geompoint for a scatter plot\n\n\n\nCodeggplot(elections, aes(x = repub_pct_16, y = repub_pct_20)) +\n  geom_point(fill = \"turquoise2\") +\n  labs(x = \"repub support 2016\", y = \"repub support 2020\")\n\n\n\n\n\n\nCode #geom_point()",
+    "crumbs": [
+      "In-Class Activities",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Bivariate Viz — Exercises</span>"
+    ]
+  },
+  {
+    "objectID": "ica/04-bivariate-viz-exercises.html#exercise-2-2-quantitative-variables",
+    "href": "ica/04-bivariate-viz-exercises.html#exercise-2-2-quantitative-variables",
+    "title": "Bivariate Viz — Exercises",
+    "section": "Exercise 2: 2 Quantitative Variables",
+    "text": "Exercise 2: 2 Quantitative Variables\nRun each chunk below to build up a a scatterplot of repub_pct_20 vs repub_pct_16 with different glyphs representing each county. Address or think about any prompts in the comments (#).\n\nCode# Set up the plotting frame\nggplot(elections)\n\n\n\n\n\n\nCode# How does this differ from the frame for our histogram of repub_pct_20 alone?\n# This differs from the frame of histograms of repub_pct_20 by precise amounts, more clear on number of counties.\n\n# this graph shows \nggplot(elections, aes(y = repub_pct_20, x = repub_pct_16))\n\n\n\n\n\n\n\n\nCode# Add a layer of points for each county\n# Take note of the geom! - makes it a scatter plot graph\n\nggplot(elections, aes(y = repub_pct_20, x = repub_pct_16)) +\n  geom_point()\n\n\n\n\n\n\n\n\nCode# Change the shape of the points\n# What happens if you change the shape to another number? - binfinate numbers and letters to put on the scatter plot (up to 90)\nggplot(elections, aes(y = repub_pct_20, x = repub_pct_16)) +\n  geom_point(shape = 43)\n\n\n\n\n\n\n\n\nCode# Modify the code to make the points \"orange\"\n# NOTE: Try to anticipate if \"color\" or \"fill\" will be useful here. Then try both.\nggplot(elections, aes(y = repub_pct_20, x = repub_pct_16)) +\n  geom_point(color = \"darkorange2\")\n\n\n\n\n\n\n\n\nCode# Add a layer that represents each county by the state it's in\n# Take note of the geom and the info it needs to run! - state apreviation on scatter plot\nggplot(elections, aes(y = repub_pct_20, x = repub_pct_16)) +\n  geom_text(aes(label = state_abbr))",
+    "crumbs": [
+      "In-Class Activities",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Bivariate Viz — Exercises</span>"
+    ]
+  },
+  {
+    "objectID": "ica/04-bivariate-viz-exercises.html#exercise-3-reflect",
+    "href": "ica/04-bivariate-viz-exercises.html#exercise-3-reflect",
+    "title": "Bivariate Viz — Exercises",
+    "section": "Exercise 3: Reflect",
+    "text": "Exercise 3: Reflect\nSummarize the relationship between the Republican support in 2020 and 2016. Be sure to comment on:\n\nthe strength of the relationship: weak/moderate/strong &gt; strong because the linear scotter plot is expenentially growing\nthe direction of the relationship: positive/negative &gt; positive\noutliers, ie, in what state do counties deviate from the national trend? Any ideas why this might be the case? &gt; Texas, maybe because the amount of farmers in texas going more republican throughout years",
+    "crumbs": [
+      "In-Class Activities",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Bivariate Viz — Exercises</span>"
+    ]
+  },
+  {
+    "objectID": "ica/04-bivariate-viz-exercises.html#exercise-4-visualizing-trend",
+    "href": "ica/04-bivariate-viz-exercises.html#exercise-4-visualizing-trend",
+    "title": "Bivariate Viz — Exercises",
+    "section": "Exercise 4: Visualizing Trend",
+    "text": "Exercise 4: Visualizing Trend\nThe trend of the relationship between repub_pct_20 and repub_pct_16 is clearly positive and (mostly) linear. We can highlight this trend by adding a model “smooth” to the plot:\n\nCodeggplot(elections, aes(y = repub_pct_20, x = repub_pct_16)) +\n  geom_point() +\n  geom_smooth()\n\n\n\n\n\n\n\nPart a\nConstruct a new plot that contains the model smooth but does not include the individual point glyphs.\n\nCodeggplot(elections, aes(y = repub_pct_20, x = repub_pct_16)) +\n  geom_smooth()\n\n\n\n\n\n\n\nPart b\nBy default, geom_smooth() adds a smooth, localized model line. To examine the “best” linear model, we can specify method = \"lm\". It’s pretty similar in this example.\n\nCodeggplot(elections, aes(y = repub_pct_20, x = repub_pct_16)) +\n  geom_point() +\n  geom_smooth(method = \"lm\")",
+    "crumbs": [
+      "In-Class Activities",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Bivariate Viz — Exercises</span>"
+    ]
+  },
+  {
+    "objectID": "ica/04-bivariate-viz-exercises.html#exercise-5-your-turn",
+    "href": "ica/04-bivariate-viz-exercises.html#exercise-5-your-turn",
+    "title": "Bivariate Viz — Exercises",
+    "section": "Exercise 5: Your Turn",
+    "text": "Exercise 5: Your Turn\nTo examine how the 2020 results are related to some county demographics, construct scatterplots of repub_pct_20 vs median_rent, and repub_pct_20 vs median_age. Summarize the relationship between these two variables and comment on which is the better predictor of repub_pct_20, median_rent or median_age.\n\nCode# Scatterplot of repub_pct_20 vs median_rent\nggplot(elections, aes(y = repub_pct_20, x = median_rent)) +\n  geom_point()\n\n\n\n\n\n\nCode# Scatterplot of repub_pct_20 vs median_age\nggplot(elections, aes(y = repub_pct_20, x = median_age)) +\n  geom_point()\n\n\n\n\n\n\nCode#Both scatter plots show data distributed in the middle. However, the median_rent shows more of a left direction.",
+    "crumbs": [
+      "In-Class Activities",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Bivariate Viz — Exercises</span>"
+    ]
+  },
+  {
+    "objectID": "ica/04-bivariate-viz-exercises.html#exercise-6-a-sad-scatterplot",
+    "href": "ica/04-bivariate-viz-exercises.html#exercise-6-a-sad-scatterplot",
+    "title": "Bivariate Viz — Exercises",
+    "section": "Exercise 6: A Sad Scatterplot",
+    "text": "Exercise 6: A Sad Scatterplot\nNext, let’s explore the relationship between a county’s 2020 Republican support repub_pct_20 and the historical political trends in its state. In this case repub_pct_20 is quantitative, but historical is categorical. Explain why a scatterplot might not be an effective visualization for exploring this relationship. (What questions does / doesn’t it help answer?) &gt; doesn’t explain a clear correlation of any dramatic points between the repub_pct_20 vs. the historical data.\n\nCodeggplot(elections, aes(y = repub_pct_20, x = historical)) +\n  geom_point()",
+    "crumbs": [
+      "In-Class Activities",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Bivariate Viz — Exercises</span>"
+    ]
+  },
+  {
+    "objectID": "ica/04-bivariate-viz-exercises.html#exercise-7-quantitative-vs-categorical-violins-boxes",
+    "href": "ica/04-bivariate-viz-exercises.html#exercise-7-quantitative-vs-categorical-violins-boxes",
+    "title": "Bivariate Viz — Exercises",
+    "section": "Exercise 7: Quantitative vs Categorical: Violins & Boxes",
+    "text": "Exercise 7: Quantitative vs Categorical: Violins & Boxes\nThough the above scatterplot did group the counties by historical category, it’s nearly impossible to pick out meaningful patterns in 2020 Republican support in each category. Let’s try adding 2 different geom layers to the frame:\n\nCode# Side-by-side violin plots\nggplot(elections, aes(y = repub_pct_20, x = historical)) +\n  geom_violin()\n\n\n\n\n\n\n\n\nCode# Side-by-side boxplots (defined below)\nggplot(elections, aes(y = repub_pct_20, x = historical)) +\n  geom_boxplot()\n\n\n\n\n\n\n\nBox plots are constructed from five numbers: the minimum, 25th percentile, median, 75th percentile, and maximum value of a quantitative variable:\n\nREFLECT:\nSummarize what you’ve learned about the 2020 Republican county-level support within and between red/purple/blue states. &gt; Between the 2020 republican county-level support within we see more of the republican (red) be more on expanded.",
+    "crumbs": [
+      "In-Class Activities",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Bivariate Viz — Exercises</span>"
+    ]
+  },
+  {
+    "objectID": "ica/04-bivariate-viz-exercises.html#exercise-8-quantitative-vs-categorical-intuition-check",
+    "href": "ica/04-bivariate-viz-exercises.html#exercise-8-quantitative-vs-categorical-intuition-check",
+    "title": "Bivariate Viz — Exercises",
+    "section": "Exercise 8: Quantitative vs Categorical: Intuition Check",
+    "text": "Exercise 8: Quantitative vs Categorical: Intuition Check\n\n\n\n\n\n\nImportantBe Quick\n\n\n\nDon’t spend more than 3 minutes on this!\n\n\nWe can also visualize the relationship between repub_pct_20 and historical using our familiar density plots. In the plot below, notice that we simply created a separate density plot for each historical category. The plot itself is “bad” but we’ll fix it below. Try to adjust the code chunk below, which starts with a density plot of repub_pct_20 alone, to re-create this image.\n\n\nCodeggplot(elections, aes(x = repub_pct_20)) +\n  geom_density()",
+    "crumbs": [
+      "In-Class Activities",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Bivariate Viz — Exercises</span>"
+    ]
+  },
+  {
+    "objectID": "ica/04-bivariate-viz-exercises.html#exercise-9-quantitative-vs-categorical-density-plots",
+    "href": "ica/04-bivariate-viz-exercises.html#exercise-9-quantitative-vs-categorical-density-plots",
+    "title": "Bivariate Viz — Exercises",
+    "section": "Exercise 9: Quantitative vs Categorical: Density Plots",
+    "text": "Exercise 9: Quantitative vs Categorical: Density Plots\nWork through the chunks below and address the comments therein.\n\nCode# the names of the colors are wrong and on the y-axis the numbers are not percise, they are numbers that are too low.\nggplot(elections, aes(x = repub_pct_20, fill = historical)) +\n  geom_density()\n\n\n\n\n\n\n\n\nCode# The scale_fill_manual fills the density graphs with certain color depending on data.\nggplot(elections, aes(x = repub_pct_20, fill = historical)) +\n  geom_density() +\n  scale_fill_manual(values = c(\"blue\", \"purple\", \"red\"))\n\n\n\n\n\n\n\n\nCode# Alpha = 0.40 makes the scale_fill_manual a lighter color to where it is transparent for the density graph.\nggplot(elections, aes(x = repub_pct_20, fill = historical)) +\n  geom_density(alpha = 0.40) +\n  scale_fill_manual(values = c(\"blue\", \"purple\", \"red\"))\n\n\n\n\n\n\n\n\nCode# What facet_wrap do does it separate each of the historical data into different parts, in this case three seperate density graphs. \nggplot(elections, aes(x = repub_pct_20, fill = historical)) +\n  geom_density() +\n  scale_fill_manual(values = c(\"blue\", \"purple\", \"red\")) +\n  facet_wrap(~historical)\n\n\n\n\n\n\n\n\nCode# This density plot would not be useful to track data because the graph is telling us that it alignes with all the repub_pct_20 data.\nggplot(elections, aes(x = repub_pct_20, fill = historical)) +\n  geom_histogram(color = \"white\") +\n  scale_fill_manual(values = c(\"blue\", \"purple\", \"red\"))",
+    "crumbs": [
+      "In-Class Activities",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Bivariate Viz — Exercises</span>"
+    ]
+  },
+  {
+    "objectID": "ica/04-bivariate-viz-exercises.html#exercise-10-reflect",
+    "href": "ica/04-bivariate-viz-exercises.html#exercise-10-reflect",
+    "title": "Bivariate Viz — Exercises",
+    "section": "Exercise 10: Reflect",
+    "text": "Exercise 10: Reflect\nWe’ve now learned 3 (of many) ways to visualize the relationship between a quantitative and categorical variable: side-by-side violins, boxplots, and density plots.\n\nWhich do you like best? &gt; The best graph\nWhat is one pro of density plots relative to boxplots? &gt;\nWhat is one con of density plots relative to boxplots? &gt;",
+    "crumbs": [
+      "In-Class Activities",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Bivariate Viz — Exercises</span>"
+    ]
+  },
+  {
+    "objectID": "ica/04-bivariate-viz-exercises.html#exercise-11-categorical-vs-categorical-intuition-check",
+    "href": "ica/04-bivariate-viz-exercises.html#exercise-11-categorical-vs-categorical-intuition-check",
+    "title": "Bivariate Viz — Exercises",
+    "section": "Exercise 11: Categorical vs Categorical: Intuition Check",
+    "text": "Exercise 11: Categorical vs Categorical: Intuition Check\nFinally, let’s simply explore who won each county in 2020 (winner_20) and how this breaks down by historical voting trends in the state. That is, let’s explore the relationship between 2 categorical variables. Following the same themes as above, we can utilize grouping features such as fill/color or facets to distinguish between different categories of winner_20 and historical.\n\n\n\n\n\n\nImportantBe Quick\n\n\n\nSpend at most 5 minutes on the following intuition check. Adjust the code below to recreate the following two plots.\n\n\n\n\nCode# Plot 1: adjust this to recreate the top plot\nggplot(elections, aes(x = historical, fill = winner_20)) +\n  geom_bar()\n\n\n\n\n\n\n\n\nCode# Plot 2: adjust this to recreate the bottom plot\nggplot(elections, aes(x = winner_20)) +\n  geom_bar() +\n  facet_wrap(~historical)",
+    "crumbs": [
+      "In-Class Activities",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Bivariate Viz — Exercises</span>"
+    ]
+  },
+  {
+    "objectID": "ica/04-bivariate-viz-exercises.html#exercise-12-categorical-vs-categorical",
+    "href": "ica/04-bivariate-viz-exercises.html#exercise-12-categorical-vs-categorical",
+    "title": "Bivariate Viz — Exercises",
+    "section": "Exercise 12: Categorical vs Categorical",
+    "text": "Exercise 12: Categorical vs Categorical\nConstruct the following 4 bar plot visualizations.\n\nCode# A stacked bar plot\n# Historical plays a role on this plot that indicates the different consistently of Republican, blue being consistently Democratic and purple menaing something in between\nggplot(elections, aes(x = historical, fill = winner_20)) +\n  geom_bar()\n\n\n\n\n\n\n\n\nCode# A faceted bar plot\nggplot(elections, aes(x = winner_20)) +\n  geom_bar() +\n  facet_wrap(~historical)\n\n\n\n\n\n\n\n\nCode# A side-by-side bar plot\n# New position being \"dodge\"\nggplot(elections, aes(x = historical, fill = winner_20)) +\n  geom_bar(position = \"dodge\")\n\n\n\n\n\n\n\n\nCode# A proportional bar plot\n# The new position is \"fill\"\nggplot(elections, aes(x = historical, fill = winner_20)) +\n  geom_bar(position = \"fill\")\n\n\n\n\n\n\n\nPart a\nName one pro and one con of using the “proportional bar plot” instead of one of the other three options. &gt; one pro of using the “proportional bar plot” can be that it determines largest historical data.\nPart b\nWhat’s your favorite bar plot from part and why? &gt; My favorite bar plot would be faceted bar plot because it seperates the data into its own graph but can still make a comparison.",
+    "crumbs": [
+      "In-Class Activities",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Bivariate Viz — Exercises</span>"
+    ]
+  },
+  {
+    "objectID": "ica/05-multivariate-viz.html",
+    "href": "ica/05-multivariate-viz.html",
+    "title": "Multivariate Viz",
+    "section": "",
+    "text": "SAT & Spending\nThough far from a perfect assessment of academic preparedness, SAT scores have historically been used as one measurement of a state’s education system. The education dataset contains various education variables for each state:\nCode# Import and check out data\nlibrary(tidyverse)\n\neducation &lt;- read.csv(\"https://mac-stat.github.io/data/sat.csv\")\nhead(education)\n\n       State expend ratio salary frac verbal math  sat  fracCat\n1    Alabama  4.405  17.2 31.144    8    491  538 1029   (0,15]\n2     Alaska  8.963  17.6 47.951   47    445  489  934 (45,100]\n3    Arizona  4.778  19.3 32.175   27    448  496  944  (15,45]\n4   Arkansas  4.459  17.1 28.934    6    482  523 1005   (0,15]\n5 California  4.992  24.0 41.078   45    417  485  902  (15,45]\n6   Colorado  5.443  18.4 34.571   29    462  518  980  (15,45]\n\nCodelibrary(readr)\nA codebook is provided by Danny Kaplan who also made these data accessible:",
+    "crumbs": [
+      "In-Class Activities",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Multivariate Viz</span>"
+    ]
+  },
+  {
+    "objectID": "ica/05-multivariate-viz.html#sat-spending",
+    "href": "ica/05-multivariate-viz.html#sat-spending",
+    "title": "Multivariate Viz",
+    "section": "",
+    "text": "✏️ Plot SAT Scores\nConstruct a plot of how the average sat scores vary across states (HINT: you need to use the sat variable only).\n\nCodeggplot(education, aes(x = sat)) +\n  geom_density() +\n  theme_minimal()\n\n\n\n\n\n\n\n✏️ Summarize SAT Distribution\nSummarize your observations from the plot. Comment on the basics: range, typical outcomes, shape. (Any theories about what might explain this non-normal shape?)\n\nThe shape of this graph represents more scores being around the 900 scale but then there is lower scores closer to 1100.\n\n✏️ Plot SAT vs Spending\nThe first question we’d like to answer is: Can the variability in sat scores from state to state be partially explained by how much a state spends on education, specifically its per pupil spending (expend) and typical teacher salary?\n\nCode# Construct a plot of sat vs expend\n# Include a \"best fit linear regression model\" (HINT: method = \"lm\")\nggplot(education, aes(x = sat, y = expend)) +\n  geom_smooth(method = \"lm\") \n\n\n\n\n\n\n\n✏️ Plot SAT vs Salary\n\nCode# Construct a plot of sat vs salary\n# Include a \"best fit linear regression model\" (HINT: method = \"lm\")\nggplot(education, aes(x = sat, y = salary)) +\n  geom_smooth(method = \"lm\") \n\n\n\n\n\n\n\n✏️ Describe Spending Trends\nWhat are the relationship trends between SAT scores and spending? Is there anything that surprises you?\n\nThe relationship trends between SAT scores and spendning",
+    "crumbs": [
+      "In-Class Activities",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Multivariate Viz</span>"
+    ]
+  },
+  {
+    "objectID": "ica/05-multivariate-viz.html#trivariate-viz",
+    "href": "ica/05-multivariate-viz.html#trivariate-viz",
+    "title": "Multivariate Viz",
+    "section": "Trivariate Viz",
+    "text": "Trivariate Viz\n✏️ Combine Spending & Salaries\nConstruct one visualization of the relationship of sat with salary and expend. HINT: Start with just 2 variables and tweak that code to add the third variable. Try out a few things!\n✏️ Discretize Scale\nIt can be tough to distinguish color scales and size scales for quantitative variables. Another option is to discretize a quantitative variable, or basically cut it up into categories.\nConstruct the plot below. Check out the code and think about what’s happening here. What happens if you change “2” to “3”?\n\nCodeggplot(education, aes(y = sat, x = salary, color = cut(expend, 2))) + \n  geom_point() + \n  geom_smooth(se = FALSE, method = \"lm\")\n\n\n\n\n\n\n\n✏️ Describe Trivariate Relationship\nDescribe the trivariate relationship between sat, salary, and expend.",
+    "crumbs": [
+      "In-Class Activities",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Multivariate Viz</span>"
+    ]
+  },
+  {
+    "objectID": "ica/05-multivariate-viz.html#simpsons-paradox",
+    "href": "ica/05-multivariate-viz.html#simpsons-paradox",
+    "title": "Multivariate Viz",
+    "section": "Simpson’s Paradox",
+    "text": "Simpson’s Paradox\nIt’s strange that SAT scores seem to decrease with spending. But we’re leaving out an important variable from our analysis: the fraction of a state’s students that actually take the SAT. The fracCat variable indicates this fraction: low (under 15% take the SAT), medium (15-45% take the SAT), and high (at least 45% take the SAT).\n✏️ Plot SAT Participation\nBuild a univariate viz of fracCat to better understand how many states fall into each category.\n\nCode# A histogram would work too!\nggplot(education, aes(x = sat)) + \n  geom_density()\n\n\n\n\n\n\nCodeggplot(education, aes(x = fracCat)) + \n  geom_bar()\n\n\n\n\n\n\nCodeggplot(education, aes(x = sat, fill = fracCat)) + \n  geom_density(alpha = 0.5)\n\n\n\n\n\n\n\n✏️ Relate SAT to Participation\nBuild 2 bivariate visualizations that demonstrate the relationship between sat and fracCat. What story does your graphic tell and why does this make contextual sense?\n\nCode# Construct a plot of sat vs expend\n# Include a \"best fit linear regression model\"\nggplot(education, aes(y = sat, x = expend)) + \n  geom_point() + \n  geom_smooth(method = \"lm\")\n\n\n\n\n\n\n\n✏️ Add Participation to Spending Plot\nMake a trivariate visualization that demonstrates the relationship of sat with expend AND fracCat. Highlight the differences in fracCat groups through color AND unique trend lines. What story does your graphic tell?\nDoes it still seem that SAT scores decrease as spending increases?\n\nCode# Construct a plot of sat vs salary\n# Include a \"best fit linear regression model\"\nggplot(education, aes(y = sat, x = salary)) + \n  geom_point() + \n  geom_smooth(method = \"lm\")\n\n\n\n\n\n\nCodeggplot(education, aes(y = sat, x = salary, color = expend)) + \n  geom_point() + \n  geom_smooth(method = \"lm\")\n\n\n\n\n\n\nCodeggplot(education, aes(y = sat, x = expend, color = fracCat)) + \n  geom_point() + \n  geom_smooth(method = \"lm\")\n\n\n\n\n\n\n\n✏️ Explain Simpson’s Paradox\nPutting all of this together, explain this example of Simpson’s Paradox. That is, why did it appear that SAT scores decrease as spending increases even though the opposite is true?",
+    "crumbs": [
+      "In-Class Activities",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Multivariate Viz</span>"
+    ]
+  },
+  {
+    "objectID": "ica/05-multivariate-viz.html#heat-maps-star-plots-optional",
+    "href": "ica/05-multivariate-viz.html#heat-maps-star-plots-optional",
+    "title": "Multivariate Viz",
+    "section": "Heat Maps & Star Plots (Optional)",
+    "text": "Heat Maps & Star Plots (Optional)\nAs usual, we’ve only just scratched the surface! There are lots of other data viz techniques for exploring multivariate relationships. Let’s start with a heat map.\n✏️ Build Heat Maps\nRun the chunks below. Check out the code, but don’t worry about every little detail! NOTES:\n\nThis is not part of the ggplot() grammar, making it a bit complicated.\nIf you’re curious about what a line in the plot does, comment it out (#) and check out what happens!\nIn the plot, for each state (row), each variable (column) is scaled to indicate whether the state has a relative high value (yellow), a relatively low value (purple), or something in between (blues/greens).\nYou can also play with the color scheme. Type ?cm.colors in the console to learn about various options.\nWe’ll improve the plot later, so don’t spend too much time trying to learn something from this plot.\n\n\nCode# Remove the \"State\" column and use it to label the rows\n# Then scale the variables\nplot_data &lt;- education |&gt; \n  column_to_rownames(\"State\") |&gt; \n  data.matrix() |&gt; \n  scale()\n\n# Load the gplots package needed for heatmaps\nlibrary(gplots)\n\n# Construct heatmap 1\nheatmap.2(plot_data,\n  dendrogram = \"none\",\n  Rowv = NA, \n  scale = \"column\",\n  keysize = 0.7, \n  density.info = \"none\",\n  col = hcl.colors(256), \n  margins = c(10, 20),\n  colsep = c(1:7), rowsep = (1:50), sepwidth = c(0.05, 0.05),\n  sepcolor = \"white\", trace = \"none\"\n)\n\n\n\nCode# Construct heatmap 2\nheatmap.2(plot_data,\n  dendrogram = \"none\",\n  Rowv = TRUE,             ### WE CHANGED THIS FROM NA TO TRUE\n  scale = \"column\",\n  keysize = 0.7, \n  density.info = \"none\",\n  col = hcl.colors(256), \n  margins = c(10, 20),\n  colsep = c(1:7), rowsep = (1:50), sepwidth = c(0.05, 0.05),\n  sepcolor = \"white\", trace = \"none\"\n)\n\n\n\nCode# Construct heatmap 3\nheatmap.2(plot_data,\n  dendrogram = \"row\",       ### WE CHANGED THIS FROM \"none\" TO \"row\"\n  Rowv = TRUE,            \n  scale = \"column\",\n  keysize = 0.7, \n  density.info = \"none\",\n  col = hcl.colors(256), \n  margins = c(10, 20),\n  colsep = c(1:7), rowsep = (1:50), sepwidth = c(0.05, 0.05),\n  sepcolor = \"white\", trace = \"none\"\n)\n\n\n✏️ Interpret Heat Maps\nIn the final two plots, the states (rows) are rearranged by similarity with respect to these education metrics. The final plot includes a dendrogram which further indicates clusters of similar states. In short, states that have a shorter path to connection are more similar than others.\nPutting this all together, what insight do you gain about the education trends across U.S. states? Which states are similar? In what ways are they similar? Are there any outliers with respect to 1 or more of the education metrics?\n✏️ Build Star Plot\nLike heat maps, star plots indicate the relative scale of each variable for each state. Thus, we can use star maps to identify similar groups of states, and unusual states!\nConstruct and check out the star plot below. Note that each state has a “pie”, with each segment corresponding to a different variable. The larger a segment, the larger that variable’s value is in that state. For example:\n\nCheck out Minnesota. How does Minnesota’s education metrics compare to those in other states? What metrics are relatively high? Relatively low?\nWhat states appear to be similar? Do these observations agree with those that you gained from the heat map?\n\n\nCodestars(plot_data,\n  flip.labels = FALSE,\n  key.loc = c(10, 1.5),\n  cex = 1, \n  draw.segments = TRUE\n)\n\n\nstars(plot_data,\n  flip.labels = FALSE,\n  locations = data.matrix(as.data.frame(state.center)),  # added external data to arrange by geo location\n  key.loc = c(-110, 28),\n  cex = 1, \n  draw.segments = TRUE\n)\n\n\n✏️ Map Star Plots\nFinally, let’s plot the state stars by geographic location! What new insight do you gain here?!\n\nCodestars(plot_data,\n  flip.labels = FALSE,\n  locations = data.matrix(as.data.frame(state.center)),  # added external data to arrange by geo location\n  key.loc = c(-110, 28),\n  cex = 1, \n  draw.segments = TRUE\n  \n)",
+    "crumbs": [
+      "In-Class Activities",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Multivariate Viz</span>"
+    ]
+  },
+  {
+    "objectID": "ica/07-effective-viz.html",
+    "href": "ica/07-effective-viz.html",
+    "title": "Effective Viz",
+    "section": "",
+    "text": "Professionalism",
+    "crumbs": [
+      "In-Class Activities",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Effective Viz</span>"
+    ]
+  },
+  {
+    "objectID": "ica/07-effective-viz.html#professionalism",
+    "href": "ica/07-effective-viz.html#professionalism",
+    "title": "Effective Viz",
+    "section": "",
+    "text": "✏️ Add Labels\nLet’s examine weather in 3 Australian locations.\n\nCode# Load tidyverse package for plotting and wrangling\nlibrary(tidyverse)\n\n# Import the data\nweather &lt;- read.csv(\"https://mac-stat.github.io/data/weather_3_locations.csv\") |&gt; \n  mutate(date = as.Date(date))\n\n\nThe following plot is fine for things like homework or just playing around. But we’ll make it more “professional” looking below.\n\nCodeggplot(weather, aes(y = temp3pm, x = temp9am, color = location)) + \n  geom_point()\n\n\n\n\n\n\n\nReplace A, B, C, and D in the code below to:\n\nAdd a short, but descriptive title. Under 10 words.\nChange the x- and y-axis labels, currently just the names of the variables in the dataset. These should be short and include units.\nChange the legend title to “Location” (just for practice, not because it’s better than “location”).\n\n\nCodeggplot(weather, aes(y = temp3pm, x = temp9am, color = location)) + \n  geom_point() + \n  labs(x = \"A\", y = \"B\", title = \"C\", color = \"D\")  \n\n\n\n\n\n\n\n✏️ Add Figure Caption\nWhen we’re including our plot in an article, paper, book, or other similar outlet, we should (and are expected to) provide a more descriptive figure caption. Typically, this is instead of a title and is more descriptive of what exactly is being plotted.\n\nAdd a figure caption in the top of the chunk.\nInclude your x-axis, y-axis, and legend labels from ✏️ Add Labels.\nRender your Rmd and check out how the figure caption appears.\n\n```{r}\n#| fig-cap: \"???\"\n\nggplot(weather, aes(y = temp3pm, x = temp9am, color = location)) + \n  geom_point() + \n  labs(x = \"???\", y = \"???\", color = \"???\")  \n```\n\n\n\n\n???",
+    "crumbs": [
+      "In-Class Activities",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Effective Viz</span>"
+    ]
+  },
+  {
+    "objectID": "ica/07-effective-viz.html#accessibility",
+    "href": "ica/07-effective-viz.html#accessibility",
+    "title": "Effective Viz",
+    "section": "Accessibility",
+    "text": "Accessibility\n✏️ Add Alt Text\nLet’s now make a graphic more accessible.\n\nCodeggplot(weather, aes(x = temp3pm, fill = location)) + \n  geom_density(alpha = 0.5) + \n  labs(x = \"3pm temperature (Celsius)\")  \n\n\n\nDensity plots of 3pm temperatures in 3 Australian locations.\n\n\n\nLet’s add some alt text that can be picked up by screen readers. This is a great resource on writing alt text for data viz. In short, whereas figure captions are quick descriptions which assume that the viz is accessible, alt text is a longer description which assumes the viz is not accessible. Alt text should concisely articulate:\n\nWhat your visualization is (e.g. a density plot of 3pm temperatures in Hobart, Uluru, and Wollongong, Australia).\nA 1-sentence description of the most important takeaway.\nA link to your data source if it’s not already in the caption.\n\nAdd appropriate alt text at the top of the chunk, in fig-alt. Then render your qmd, and hover over the image in your rendered html file to check out the alt text.\n```{r}\n#| fig-cap: \"Density plots of 3pm temperatures in 3 Australian locations.\"\n#| fig-alt: \"???\"\n\nggplot(weather, aes(x = temp3pm, fill = location)) + \n  geom_density(alpha = 0.5) + \n  labs(x = \"3pm temperature (Celsius)\")  \n```\n\n\n\n\nDensity plots of 3pm temperatures in 3 Australian locations.\n\n\n\n\n✏️ Check Color Accessibility\nColor is another important accessibility consideration. Let’s check out the color accessibility of our density plot.\n\nRun the ggplot() code from ✏️ Add Alt Text in your console. The viz will pop up in the Plots tab.\nIn the Plots tab, click “Export” then “Save as image”. Save the image somewhere.\nNavigate to https://www.color-blindness.com/coblis-color-blindness-simulator/\n\nAbove the image of crayons (I think it’s crayons?), click “Choose file” and choose the plot file you just saved.\nClick the various simulator buttons (eg: Red-Weak/Protanomaly) to check out how the colors in this plot might appear to others.\nSummarize what you learn. What impact might our color choices have on one’s ability to interpret the viz?\n✏️ Try Color-Blind Palettes\nWe can change our color schemes! There are many color-blind friendly palettes in R. In the future, we’ll set a default, more color-blind friendly color theme at the top of our Rmds. We can also do this individually for any plot that uses color. Run the chunks below to explore various options.\n\nCodeggplot(weather, aes(x = temp3pm, fill = location)) + \n  geom_density(alpha = 0.5) + \n  labs(x = \"3pm temperature (Celsius)\") + \n  scale_fill_viridis_d()    \n\n\n\n\n\n\n\n\nCode# In the color scale line:\n# Change \"fill\" to \"color\" since we use color in the aes()\n# Change \"d\" (discrete) to \"c\" (continuous) since maxtemp is on a continuous scale\nggplot(weather, aes(y = temp3pm, x = temp9am, color = maxtemp)) + \n  geom_point(alpha = 0.5) + \n  labs(x = \"3pm temperature (Celsius)\") + \n  scale_color_viridis_c()",
+    "crumbs": [
+      "In-Class Activities",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Effective Viz</span>"
+    ]
+  },
+  {
+    "objectID": "ica/07-effective-viz.html#ethics",
+    "href": "ica/07-effective-viz.html#ethics",
+    "title": "Effective Viz",
+    "section": "Ethics",
+    "text": "Ethics\n✏️ Spot Misleading Viz\nLet’s scratch the surface of ethics in data viz. Central to this discussion is the consideration of impact.\nAt a minimum, our data viz should not mislead. Reconsider the climate change example from above. Why is this plot unethical and what impact might it have on policy, public opinion, etc?\n\n✏️ Discuss Viz Approaches\nAgain, data viz ethical considerations go beyond whether or not a plot is misleading. As described in the warm-up, we need to consider: visibility, privacy, power, emotion & embodiment, pluralism, & context. Depending upon the audience and goals of a data viz, addressing these points might require more nuance. Mainly, the viz tools we’ve learned are a great base or foundation, but aren’t the only approaches to data viz. \nPick one or more of the following examples of data viz to discuss with your group. How do the approaches taken:\n\nemphasize one or more of: visibility, privacy, power, emotion, embodiment, pluralism, and/or context?\nimprove upon what we might be able to convey with a simpler bar chart, scatterplot, etc?\n\n\nExample: W.E.B. Du Bois (1868–1963)\nDu Bois (“Doo Boys”) was a “sociologist, socialist, historian, civil rights activist, Pan-Africanist, author, writer, and editor”1. He was also a pioneer in elevating emotion and embodiment in data visualization. For the Paris World Fair of 1900, Du Bois and his team of students from Atlanta University presented 60 data visualizations of the Black experience in America, less than 50 years after the abolishment of slavery. Du Bois noted: “I wanted to set down its aim and method in some outstanding way which would bring my work to notice by the thinking world.” That is, he wanted to increase the impact of his work by partnering technical visualizations with design that better connects to lived experiences. NOTE: This work uses language common to that time period and addresses the topic of slavery. Check out:\n\nA complete set of the data visualizations provided by Anthony Starks (@ajstarks).\nAn article by Allen Hillery (@AlDatavizguy).\n\n\nExample: One person’s experience with long COVID\nNYT article\n\nExample: Decolonizing data viz\nblog post\n\nExample: Visualizing climate change through art\nFutures North with Prof John Kim & Mac students (by Prof Kim, Mac research students)\n\nExample: Personal data collection\nDear Data\n\n✏️ Read Data Feminism\nFor a deeper treatment of similar topics, and more examples, read Data Feminism.",
+    "crumbs": [
+      "In-Class Activities",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Effective Viz</span>"
+    ]
+  },
+  {
+    "objectID": "ica/07-effective-viz.html#critique",
+    "href": "ica/07-effective-viz.html#critique",
+    "title": "Effective Viz",
+    "section": "Critique",
+    "text": "Critique\n✏️ Critique Viz\nPractice critiquing some more complicated data viz listed at Modern Data Science with R, Exercise 2.5.\nThink about the following questions:\n\nWhat story does the data graphic tell? What is the main message that you take away from it?\nCan the data graphic be described in terms of the Grammar of Graphics (frame, glyphs, aesthetics, facet, scale, guide)? If so, please describe.\nCritique and/or praise the visualization choices made by the designer. Do they work? Are they misleading? Thought-provoking? Are there things that you would have done differently?",
+    "crumbs": [
+      "In-Class Activities",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Effective Viz</span>"
+    ]
+  },
+  {
+    "objectID": "ica/07-effective-viz.html#design-details",
+    "href": "ica/07-effective-viz.html#design-details",
+    "title": "Effective Viz",
+    "section": "Design Details",
+    "text": "Design Details\n✏️ Notice Selectivity\nThis final exercise is just “food for thought”. It’s more of a discussion than an exercise, and gets into some of the finer design details and data viz theory. Go as deep or not deep as you’d like here.\nIn refining the details of our data viz, Visualize This and Storytelling with Data provide some of their guiding principles. But again, every context is different.\n\nPut yourself in a reader’s shoes. What parts of the data need explanation?\nShine a light on your data. Try to remove any “chart junk” that distracts from the data.\nVary color and style to emphasize the viz elements that are most important to the story you’re telling.\nIt is easier to judge length than it is to judge area or angles.\nBe thoughtful about how your categories are ordered for categorical data.\n\nGetting into even more of the nitty gritty, we need to be mindful of what geometric elements and aesthetics we use. The following elements/aesthetics are listed in roughly descending order of human ability to perceive and compare nearby objects:2\n\nPosition\nLength\nAngle\nDirection\nShape (but only a very few different shapes)\nArea\nVolume\nShade\nColor. (Color is the most difficult, because it is a 3-dimensional quantity.)\n\nFinally, here are some facts to keep in mind about visual perception from Now You See It.\nSelectivity\nVisual perception is selective, and our attention is often drawn to contrasts from the norm.\nImplication: We should design visualizations so that the features we want to highlight stand out in contrast from those that are not worth the audience’s attention.\nExample: What stands out in this example image? This is originally from C. Ware, Information Visualization: Perception for Design, 2004? Source: S. Few, Now You See It, 2009, p. 33.\n\n✏️ Notice Familiarity\nOur eyes are drawn to familiar patterns. We observe what we know and expect.\nImplication: Visualizations work best when they display information as patterns that familiar and easy to spot.\nExample: Do you notice anything embedded in this rose image from coolbubble.com? Source: S. Few, Now You See It, 2009, p. 34.\n\n✏️ Revisit Rose Image\nRevisit the rose image above. Do you notice anything in the shadows? Go to https://mac-stat.github.io/images/112/rose2.png for an image.",
+    "crumbs": [
+      "In-Class Activities",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Effective Viz</span>"
+    ]
+  },
+  {
+    "objectID": "ica/07-effective-viz.html#wrapping-up",
+    "href": "ica/07-effective-viz.html#wrapping-up",
+    "title": "Effective Viz",
+    "section": "Wrapping up",
+    "text": "Wrapping up\nIf you finish early:\n\nWork on homework if not done already\nComplete any activities you haven’t finished yet, eg, spatial viz, the optional but fun exercises in the Multivariate viz and Bivariate viz activities.\nIf you’ve done all that, explore some datasets in TidyTuesday.",
+    "crumbs": [
+      "In-Class Activities",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Effective Viz</span>"
+    ]
+  },
+  {
+    "objectID": "ica/07-effective-viz.html#footnotes",
+    "href": "ica/07-effective-viz.html#footnotes",
+    "title": "Effective Viz",
+    "section": "",
+    "text": "https://en.wikipedia.org/wiki/W._E._B._Du_Bois↩︎\nB. S. Baumer, D. T. Kaplan, and N. J. Horton, Modern Data Science with R, 2017, p. 15.↩︎",
+    "crumbs": [
+      "In-Class Activities",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Effective Viz</span>"
     ]
   },
   {
@@ -347,7 +622,7 @@
     "text": "Add content here",
     "crumbs": [
       "Extras",
-      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Extra Sample 1</span>"
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Extra Sample 1</span>"
     ]
   },
   {
@@ -358,7 +633,7 @@
     "text": "Add content here",
     "crumbs": [
       "Extras",
-      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Extra Sample 2</span>"
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Extra Sample 2</span>"
     ]
   }
 ]
