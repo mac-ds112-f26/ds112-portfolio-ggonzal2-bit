@@ -1,0 +1,139 @@
+---
+title: "HW6-P2 TidyTuesday"
+format: 
+  html: 
+    embed-resources: true
+---
+
+```{r}
+# Load required libraries
+library(tidyverse)
+```
+
+## Introduction
+
+Tidy Tuesday is a weekly data project put on by some folks from the R Data Science community. Each week, a different data set is posted and people around the world wrangle and visualize that data. According to the organizers, "The intent of Tidy Tuesday is to provide a safe and supportive forum for individuals to practice their wrangling and data visualization skills independent of drawing conclusions."
+
+
+The goals of this TidyTuesday are:
+
+1.  Practice generating questions. You have to decide what to ask and how to answer it with a graphic.
+2.  Practice identifying what viz and wrangling tools are useful for addressing your questions.
+4.  Get a sense of the broader data science community. Check out what people share out on [X/Twitter #TidyTuesday](https://x.com/search?q=%23TidyTuesday). Maybe even share your own #TidyTuesday work on social media. Recent Mac alum [Erin Franke (X/Twitter)](https://x.com/efranke7282) has an inspiring account! Scrolling through, you'll notice the trajectory of her work, starting from COMP/STAT 112 to today. Very cool.
+
+
+
+## Exercise 1
+
+Go to [TidyTuesday](https://github.com/rfordatascience/tidytuesday). Pick a dataset that was posted in the **last 4 weeks**. Here, include:
+
+- A short (\~2 sentence) written description of your data. This should include: 
+  - the original data source, ie, where did TidyTuesday get the data from?
+  - units of observation, ie, what are you analyzing?, and 
+  - the data size, ie, how many data points do you have? how many variables are measured on each data point?.
+
+::: {.callout-note title="Answer"}
+
+Replace this text with your answer
+
+:::
+
+- Code to import and examine the basic properties of your chosen dataset. This code must support the facts you cited in your short written description.
+
+```{r}
+
+```
+
+## Exercise 2
+
+In the 3 sections below (Viz 1, 2, 3), construct 3 separate graphs that tell a *connected* story about the data you chose.  
+
+**Before each viz:**
+
+-   write a simple but specific research question you're trying to address with the viz.
+-   write a 2-4 sentence summary of what you learn from the viz. This should connect back to your research question!
+
+**After each viz:**
+
+-   Comment on at least 2 effective aspects of the viz (consider the effective visualization principles).
+-   Comment on at least 2 aspects of the visualization that could be improved. Perhaps these are aspects that you don't know how to implement yet but wish you could update it.
+
+**Make sure each viz:**
+
+-   has meaningful axis labels and legend titles
+-   has a figure caption (fig.cap)
+-   uses alt text (fig.alt)
+-   uses a more color-blind friendly color palette
+
+
+**Tips:**
+
+-   Start with some questions in mind of what you want to learn.
+-   Start with a simple viz (viz 1), and build this up into something multivariate (viz 3).
+-   Reflect on each viz -- what new questions do you have after checking out the viz? Let these questions guide your next viz.
+
+**Expectations:**
+
+- You should be wrangling data throughout your visual analysis. For example, perhaps you'll need to wrangle the data before plotting it. Perhaps wrangling / summaries will help address some follow-up questions you have from your viz. 
+- At least some of this wrangling should demonstrate the combination of multiple verbs, i.e. span multiple lines.
+
+### Viz 1
+
+::: {.callout-note title="Research Question"}
+
+PLACE YOUR RESEARCH QUESTION IN THIS CALLOUT BOX
+
+:::
+
+```{r}
+
+```
+
+::: {.callout-note title="Summary"}
+
+PLACE YOUR SUMMARY IN THIS CALLOUT BOX
+
+:::
+
+### Viz 2
+
+::: {.callout-note title="Research Question"}
+
+PLACE YOUR RESEARCH QUESTION IN THIS CALLOUT BOX
+
+:::
+
+```{r}
+
+```
+
+::: {.callout-note title="Summary"}
+
+PLACE YOUR SUMMARY IN THIS CALLOUT BOX
+
+:::
+
+### Viz 3
+
+::: {.callout-note title="Research Question"}
+
+PLACE YOUR RESEARCH QUESTION IN THIS CALLOUT BOX
+
+:::
+
+```{r}
+
+```
+
+::: {.callout-note title="Summary"}
+
+PLACE YOUR SUMMARY IN THIS CALLOUT BOX
+
+:::
+
+
+## Finalize Work
+
+Congratulations 🎉 You're done with Part 2 of Homework 6. Make sure Part 1 is also complete.
+
+To submit: click **Render**, open the generated HTML file to check that it looks right, then use **GitHub Desktop** to commit and push *both* this `.qmd` file and its HTML file. Remember: if it is not pushed, it is not submitted.  See [Submission Procedure on the HW Instructions page](https://hash-mac.github.io/ds112site-f26/hws/hw-instructions.html#submission-procedure) for the detailed steps.

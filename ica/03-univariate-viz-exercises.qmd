@@ -89,7 +89,7 @@ NOTE:
 
 ```{r}
 # what i observed is the x and y axis displayed for data next
-ggplot(hikes, aes(x = rating)) +
+ggplot(hikes, aes(x = rating,fill = "lightpink")) +
   geom_bar()
 ```
 

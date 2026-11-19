@@ -61,6 +61,7 @@ Let's load [the data](../data/our_fave_places.csv) and map it!
 
 ```{r}
 library(tidyverse)
+library(readr)
 ```
 
 ```{r}
@@ -110,7 +111,10 @@ leaflet(data = fave_places) |>
 **PLAY AROUND!** This map is interactive.
 Zoom in on one location.
 Keep zooming -- what level of detail can you get into?
+> the closest it gets it's to the street where the pin is located in. 
+
 How does that detail depend upon where you try to zoom in (thus what are the limitations of this tool)?
+> limitation: favorite place not exact
 
 ### ✏️ Customize Details
 
@@ -119,6 +123,7 @@ We can change all sorts of details in leaflet maps.
 ```{r}
 # Load package needed to change color
 library(gplots)
+library(leaflet)
 
 # We can add colored circles instead of markers at each location
 leaflet(data = fave_places) |> 
@@ -196,7 +201,12 @@ It's pretty cool that the plots we already know can provide some spatial context
 But what *don't* you like about this plot?
 
 ```{r}
-
+ggplot(starbucks_us) + 
+  geom_point(
+    data = starbucks,
+    aes(x = Longitude, y = Latitude),
+    alpha = 0.2, size = 0.2, color = "red2"
+  ) 
 ```
 
 ### ✏️ Add Country Background
@@ -220,8 +230,8 @@ Don't print it our in your Rmd -- printing it would be really messy there (even 
 Run the chunks below to build up a new map.
 
 ```{r}
-# What does this code produce?
-# What geom are we using for the point map?
+# This code produces the world map
+# Using geom_sf 
 ggplot(world_boundaries) + 
   geom_sf()
 ```
@@ -232,7 +242,7 @@ library(mosaic)
 
 # Add a point for each Starbucks
 # NOTE: The Starbucks info is in our starbucks data, not world_boundaries
-# How does this change how we use geom_point?!
+# The points overlap, some are lighter or darkers than others
 ggplot(world_boundaries) + 
   geom_sf() + 
   geom_point(
@@ -245,7 +255,7 @@ ggplot(world_boundaries) +
 
 ### ✏️ Summarize Starbucks Map
 
-Summarize what you learned about Starbucks from this map.
+Using geom_point indicates where each starbucks from around the world. The points are seen overlapping or dark when there are multiple due to the dots sizes being 0.2.
 
 ### ✏️ Zoom into Countries
 
@@ -318,6 +328,7 @@ starbucks_midwest <- starbucks |>
 # Load packages
 library(sf)
 library(maps)
+library(tidyverse)
 
 # Get the boundaries
 midwest_boundaries <- st_as_sf(
@@ -333,16 +344,14 @@ Adjust the code below to make the plot!
 Remove the `#` to run it.
 
 ```{r}
-# ggplot(___) + 
-#   geom___() + 
-#   geom___(
-#     data = ___,
-#     aes(x = ___, y = ___),
-#     alpha = 0.7,
-#     size = 0.2, 
-#     color = 'darkgreen'
-#   ) + 
-#   theme_map()
+ggplot() + 
+ geom_sf() + 
+  geom_point(
+    data = starbucks,
+    aes(x = "starbucks", y = "states_sf"),
+    alpha = 0.7,size = 0.2, 
+    color = 'darkgreen') + 
+  theme_map()
 ```
 
 ### ✏️ Build Contour Maps
