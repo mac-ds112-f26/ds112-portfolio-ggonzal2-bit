@@ -18,6 +18,7 @@ To begin, let's explore data on Kiva's *field partners*. These partners act as i
 ```{r warning = FALSE, message = FALSE}
 # Load the tidyverse
 library(tidyverse)
+library(readxl)
 
 # Load the data
 partners <- read_csv("https://mac-stat.github.io/data/kiva_partners2.csv")
@@ -29,15 +30,32 @@ Let's get to know the data.
 
 ```{r}
 # Calculate the lowest, median, and highest total amount raised by any partner
+library(tidyverse)
 
+library(tidyverse)
+
+partners <- read_csv("https://mac-stat.github.io/data/kiva_partners2.csv")
+
+partners %>%
+  summarize(
+    lowest  = min(total_amount_raised, na.rm = TRUE),
+    median  = median(total_amount_raised, na.rm = TRUE),
+    highest = max(total_amount_raised, na.rm = TRUE)
+  )
 
 # Identify the 6 partners that have raised the highest total amount
 # Show just the partner names, countries, and total amount raised
 
+partners %>%
+  arrange(desc(total_amount_raised)) %>%
+  slice_head(n = 6) %>%
+  select(partner_name, countries.name, total_amount_raised)
 
 # Show the names of the partners in Bolivia
 # (Don't include any other variables, just the partner names)
-
+partners %>%
+  filter(countries.name == "Bolivia") %>%
+  select(partner_name)
 
 ```
 
@@ -58,6 +76,14 @@ Print the entire table, sorted from high to low with respect to `total_amount` r
 
 ```{r}
 
+partners %>%
+  group_by(countries.region) %>%
+  summarize(total_partners = n(),
+            total_loans = sum(loans_posted),
+            total_amount = sum(total_amount_raised)) %>%
+  mutate(average_loan = round(total_amount / total_loans)) %>%
+  arrange(desc(total_amount))
+
 ```
 
 ### Part c
@@ -66,8 +92,7 @@ Identify two things that you learned from the table in Part b. Just pick whateve
 
 ::: {.callout-note title="Answer"}
 
-Replace this text with your answer
-
+Looking at this table, it shows that having more partners doesn't mean more money raised and most of the money comes from three regions; Asia, Africa, and South America. 
 :::
 
 ### Part d
@@ -79,16 +104,20 @@ library(rnaturalearth)
 library(mosaic)
 
 # Get a background map of the entire world
-# world_boundaries <- ___
+#Plot the partner locations on the background map
+world_boundaries <- ne_countries(returnclass = "sf")
 
-# Plot the partner locations on the background map
-# ggplot(___) + 
-#   geom___() + 
-#   geom_point(
-#     data = ___,
-#     aes(x = ___, y = ___, color = ___)
-#   ) +
-#   theme_map()
+ggplot(world_boundaries) +
+  geom_sf() +
+  geom_point(data = partners, 
+             aes(
+               x = lon, 
+               y = lat, 
+               color = total_amount_raised / 1000000)) +
+  labs(color = "Amount raised (millions)") +
+  theme_map()
+
+
 ```
 
 
@@ -125,10 +154,11 @@ View the `loans` table, browse through some of the data, and check out the [code
 ```{r}
 # Define loans_2
 
+loans_2 <- read_excel("loans_2.xlsx")
 
 # Confirm that loans_2 has 9884 rows and 13 columns
 
-
+dim(loans_2)
 ```
 
 
@@ -138,17 +168,37 @@ View the `loans` table, browse through some of the data, and check out the [code
 
 ```{r}
 # Show the top 5 countries by number of loans
-
+loans_2 %>%
+  count(location.country) %>%
+  slice_max(n, n = 5)
 
 # Show the top 5 countries by total funded loan amount
-
-
+loans_2 %>%
+  group_by(location.country) %>%
+  summarize(total_funded = sum(funded_amount)) %>%
+  arrange(desc(total_funded)) %>%
+  head(5)
 ```
 
 ### Part b
 
 Plot the mean loan size in each sector (y-axis) vs the number of loans in each sector (x-axis). Represent each sector by its name (text), not a point. HINT: You'll have to calculate the mean loan size and number of loans in each sector before you can plot them.
 
+```{r}
+sector_summary <- loans_2 %>%
+  group_by(sector) %>%
+  summarize(mean_loan = mean(funded_amount),
+            num_loans = n())
+
+ggplot(sector_summary, aes(x = num_loans, y = mean_loan, label = sector)) +
+  geom_text(size = 4, color = "pink4") +
+  scale_x_log10(labels = scales::comma) +
+  scale_y_continuous(labels = scales::dollar) +
+  labs(title = "Mean loan size vs. number of loans by sector",
+       x = "# of loans",
+       y = "Mean loan size") +
+  theme_minimal(base_size = 14)
+```
 
 
 ## Exercise: funding time (Optional)
@@ -162,7 +212,11 @@ How many days does it take borrowers to get a loan funded? Let's explore the `da
 Construct a univariate visualization of `days_to_fund`.
 
 ```{r}
-
+ggplot(loans_2, aes(x = as.numeric(days_to_fund))) +
+  geom_histogram(binwidth = 2, fill = "pink", color = "white") +
+  labs(title = "Days to fund a loan",
+       x = "Days to fund",
+       y = "Number of loans")
 ```
 
 ### Part b
@@ -170,7 +224,13 @@ Construct a univariate visualization of `days_to_fund`.
 Construct a plot of `days_to_fund` (y-axis) vs `funded_amount` (x-axis) for each loan in `loans_2`.
 
 ```{r}
-
+loans_2 %>%
+  filter(!is.na(days_to_fund)) %>%
+  ggplot(aes(x = funded_amount, y = as.numeric(days_to_fund))) +
+  geom_point(alpha = 0.3, color = "hotpink") +
+  labs(title = "Days to fund vs. funded amount",
+       x = "Funded amount",
+       y = "Days to fund")
 ```
 
 ### Part c
@@ -178,66 +238,19 @@ Construct a plot of `days_to_fund` (y-axis) vs `funded_amount` (x-axis) for each
 Construct a plot of `days_to_fund` (y-axis) vs `funded_amount` (x-axis) in each `countries.region`. Don't represent each loan on this plot. Rather, include curves to represent the trends in each region.
 
 ```{r}
-
+ggplot(loans_2, aes(x = funded_amount, y = as.numeric(days_to_fund), color = countries.region)) +
+  geom_smooth(se = FALSE) +
+  labs(title = "Days to fund vs. funded amount, by region",
+       x = "Funded amount",
+       y = "Days to fund",
+       color = "Region")
 ```
 
 ### Part d
 
 Summarize, in words, some takeaway messages from parts a-c about how long it takes to get a loan funded.
 
-
-
-## Exercise: loan status (Optional)
-
-NOTE: This exercise won't be graded, but it is highly recommended as additional practice for the quiz.
-
-The `status` variable in `loans_2` indicates the status of a loan:
-
-```{r}
-# Check out a table summary after you've defined loans_2
-# loans_2 |> 
-#   count(status)
-```
-
-Let's focus here on the patterns in loans that were paid back and those that were defaulted, i.e. not paid back.
-
-### Part a
-
-Define a new dataset, `defaults`, that only includes loans that were either defaulted or paid.
-
-```{r}
-# Define defaults
-
-# Confirm that defaults has 7010 rows and 13 columns
-
-```
-
-### Part b
-
-Using `defaults`, construct a visualization of the relationship between the funded amount and status of a loan.
-
-```{r}
-
-```
-
-### Part c
-
-Define a new dataset with four columns:
-
--   `partner_id`
--   number of defaulted loans through that partner
--   number of loans completely paid back through that partner
--   percentage of loans defaulted
-
-Sort your table from highest default percentage to lowest, and print out only those with at least a 50% default percentage. HINT: You'll have to reshape the data in this process.
-
-```{r}
-
-```
-
-### Part d
-
-Provide some take-away messages about loan defaults using your results in parts a-d.
+> Looking at all graphs, most loans are funded quickly, and A few loans take much longer.
 
 
 ## Finalize Work
