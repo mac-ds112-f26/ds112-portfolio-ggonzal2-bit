@@ -21,6 +21,12 @@ The goals of this TidyTuesday are:
 2.  Practice identifying what viz and wrangling tools are useful for addressing your questions.
 4.  Get a sense of the broader data science community. Check out what people share out on [X/Twitter #TidyTuesday](https://x.com/search?q=%23TidyTuesday). Maybe even share your own #TidyTuesday work on social media. Recent Mac alum [Erin Franke (X/Twitter)](https://x.com/efranke7282) has an inspiring account! Scrolling through, you'll notice the trajectory of her work, starting from COMP/STAT 112 to today. Very cool.
 
+```{r}
+
+tuesdata <- tidytuesdayR::tt_load('2026-11-10')
+
+
+```
 
 
 ## Exercise 1
@@ -34,14 +40,24 @@ Go to [TidyTuesday](https://github.com/rfordatascience/tidytuesday). Pick a data
 
 ::: {.callout-note title="Answer"}
 
-Replace this text with your answer
+> This week's data ranks who is strongest in 21 fictional worlds, like Marvel and Star Wars, and shows the proof for each rank. It also tracks who killed whom, and whether the character came back to life.
 
 :::
 
 - Code to import and examine the basic properties of your chosen dataset. This code must support the facts you cited in your short written description.
 
 ```{r}
+#Importing and properties
+tuesdata <- tidytuesdayR::tt_load('2026-11-10')
 
+names(tuesdata) 
+
+# Who killed whom, and whether the character came back to life
+deaths <- tuesdata$fiction_deaths  
+
+names(deaths)     
+head(deaths)      
+glimpse(deaths) 
 ```
 
 ## Exercise 2
@@ -81,17 +97,30 @@ In the 3 sections below (Viz 1, 2, 3), construct 3 separate graphs that tell a *
 
 ::: {.callout-note title="Research Question"}
 
-PLACE YOUR RESEARCH QUESTION IN THIS CALLOUT BOX
+Which franchise_slug show up more throughout the years 2010-2016?
 
 :::
 
 ```{r}
 
+tuesdata <- tidytuesdayR::tt_load('2026-11-10')
+deaths <- tuesdata$fiction_deaths
+
+names(deaths)   
+
+counts <- deaths |>
+  filter(between(year, 2010, 2016)) |>
+  count(franchise_slug, sort = TRUE)
+
+ggplot(counts, aes(x = n, y = fct_reorder(franchise_slug, n))) +
+  geom_col(fill = "pink3") +
+  labs(x = "# of times", y = "Franchise (franchise_slug)")
+
 ```
 
 ::: {.callout-note title="Summary"}
 
-PLACE YOUR SUMMARY IN THIS CALLOUT BOX
+Franchise or franchise_slug is more seen in Marvel movies from 2010 to 2016. 
 
 :::
 
@@ -99,35 +128,58 @@ PLACE YOUR SUMMARY IN THIS CALLOUT BOX
 
 ::: {.callout-note title="Research Question"}
 
-PLACE YOUR RESEARCH QUESTION IN THIS CALLOUT BOX
+Throughout the years 2015-2026, how did the verdict of the shows get the right answer.
 
 :::
 
 ```{r}
+names(deaths)
+
+verdict_by_year <- deaths |>
+  filter(between(year, 2015, 2026)) |>
+  count(year, verdict) |>
+  group_by(year) |>
+  mutate(share = n / sum(n)) |>
+  ungroup()
+
+ggplot(verdict_by_year, aes(x = factor(year), y = share, fill = verdict)) +
+  geom_col() +
+  labs(x = "Year", y = "Deaths Occured", fill = "Verdict")
+
 
 ```
 
 ::: {.callout-note title="Summary"}
 
-PLACE YOUR SUMMARY IN THIS CALLOUT BOX
-
+It is seen that the confidence on the verdict is stronger in recent years (2023 & 2024) that before. 
 :::
 
 ### Viz 3
 
 ::: {.callout-note title="Research Question"}
 
-PLACE YOUR RESEARCH QUESTION IN THIS CALLOUT BOX
+Did the number of recorded deaths change over the years (2000-2026)?
 
 :::
 
 ```{r}
+deaths_per_year <- deaths |>
+  filter(between(year, 2000, 2026)) |>
+  count(year)
+
+deaths_per_year   # check the numbers
+
+ggplot(deaths_per_year, aes(x = year, y = n)) +
+  geom_line(color = "pink") +
+  geom_point(color = "purple1") +
+  labs(x = "Year", y = "Number of recorded deaths") +
+  theme_minimal(base_size = 13)
 
 ```
 
 ::: {.callout-note title="Summary"}
 
-PLACE YOUR SUMMARY IN THIS CALLOUT BOX
+From 2000 to 2024, the number of recorded deaths changed a lot from year to year. The peak in 2011 and 2015 and falling to just one or two a year after 2020.
 
 :::
 
