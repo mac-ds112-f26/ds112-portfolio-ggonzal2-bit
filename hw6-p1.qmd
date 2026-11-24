@@ -1,0 +1,260 @@
+---
+title: "HW6-P1 Data Wrangling"
+format: 
+  html: 
+    embed-resources: true
+---
+
+## Introduction
+
+
+
+[Kiva](https://www.kiva.org/) is a non-profit organization that allows people from around the world to lend small amounts to others to start or grow a business, go to school, access clean energy, etc. Since its founding in 2005, more than \$1.2 billion in loans to over 3 million borrowers have been funded. In the following exercises, we'll examine some Kiva data from 2005-2012. 
+
+## Exercise 1: Kiva partners
+
+To begin, let's explore data on Kiva's *field partners*. These partners act as intermediaries between Kiva (the lenders) and borrowers. They evaluate borrower risk, post loan requests on Kiva, and process payments. Load data on the field partners below. A codebook with variable descriptions is [here](https://mac-stat.github.io/data/kiva_partners2_codebook.xlsx)
+
+```{r warning = FALSE, message = FALSE}
+# Load the tidyverse
+library(tidyverse)
+library(readxl)
+
+# Load the data
+partners <- read_csv("https://mac-stat.github.io/data/kiva_partners2.csv")
+```
+
+### Part a
+
+Let's get to know the data.
+
+```{r}
+# Calculate the lowest, median, and highest total amount raised by any partner
+library(tidyverse)
+
+library(tidyverse)
+
+partners <- read_csv("https://mac-stat.github.io/data/kiva_partners2.csv")
+
+partners %>%
+  summarize(
+    lowest  = min(total_amount_raised, na.rm = TRUE),
+    median  = median(total_amount_raised, na.rm = TRUE),
+    highest = max(total_amount_raised, na.rm = TRUE)
+  )
+
+# Identify the 6 partners that have raised the highest total amount
+# Show just the partner names, countries, and total amount raised
+
+partners %>%
+  arrange(desc(total_amount_raised)) %>%
+  slice_head(n = 6) %>%
+  select(partner_name, countries.name, total_amount_raised)
+
+# Show the names of the partners in Bolivia
+# (Don't include any other variables, just the partner names)
+partners %>%
+  filter(countries.name == "Bolivia") %>%
+  select(partner_name)
+
+```
+
+### Part b
+
+Create a new table with only five columns:
+
+-   `countries.region`
+-   `total_partners` = total number of partners per region
+-   `total_loans` = total number of loans posted per region
+-   `total_amount` = total amount raised per region
+-   `average_loan` = average loan size per loan posted in each region (calculated as total amount raised per region / total number of loans posted per region)
+
+Print the entire table, sorted from high to low with respect to `total_amount` raised. Note that
+
+-   Your table should have 7 rows and 5 columns.
+-   Your first row should have `countries.region = Asia`, `total_partners = 40`, `total_loans = 133060`, `total_amount = 84816225`, `average_loan = 637`.
+
+```{r}
+
+partners %>%
+  group_by(countries.region) %>%
+  summarize(total_partners = n(),
+            total_loans = sum(loans_posted),
+            total_amount = sum(total_amount_raised)) %>%
+  mutate(average_loan = round(total_amount / total_loans)) %>%
+  arrange(desc(total_amount))
+
+```
+
+### Part c
+
+Identify two things that you learned from the table in Part b. Just pick whatever you found most interesting.
+
+::: {.callout-note title="Answer"}
+
+Looking at this table, it shows that having more partners doesn't mean more money raised and most of the money comes from three regions; Asia, Africa, and South America. 
+:::
+
+### Part d
+
+Draw a map that includes a dot for each of Kiva's `partners`. Color the dot corresponding to the total amount raised by the partner. NOTE: It's easier to do this on a static map, than with leaflet.
+
+```{r warning = FALSE, message = FALSE, fig.width = 8}
+library(rnaturalearth)
+library(mosaic)
+
+# Get a background map of the entire world
+#Plot the partner locations on the background map
+world_boundaries <- ne_countries(returnclass = "sf")
+
+ggplot(world_boundaries) +
+  geom_sf() +
+  geom_point(data = partners, 
+             aes(
+               x = lon, 
+               y = lat, 
+               color = total_amount_raised / 1000000)) +
+  labs(color = "Amount raised (millions)") +
+  theme_map()
+
+
+```
+
+
+
+## Exercise 2: Kiva loans (Part 1)
+
+The `loans` data contains information on a sample of 10,000 individual loans to borrowers:
+
+```{r}
+# a random sample of 10,000 loans
+loans <- read_csv("https://mac-stat.github.io/data/kiva_loans_small.csv")
+```
+
+View the `loans` table, browse through some of the data, and check out the [codebook](https://mac-stat.github.io/data/kiva_loans_codebook.xlsx). Before working with this data, we have to do some pre-processing / wrangling. Take the following steps and store the results as `loans_2`.
+
+1.  Only keep the loans that have a positive `funded_amount`.
+
+2.  The information about *when* a loan request was posted is separated out into different fields for year, month, day, hour, etc. Combine some of this information into a single variable that records the exact posting time. Do this in three steps. NOTE: You'll get some warning messages, but these are not errors.
+
+    -   Define a new variable which records the exact date a loan request was posted by *pasting* together the year, month, and date of the request, separated by hyphens: `post_dt = paste(posted_yr, posted_mo, posted_day, sep = '-')`
+    -   Define a new variable which records the exact time of day a loan request was posted by *pasting* together the hour and minute of the request, separated by a colon:\
+        `post_time = paste(posted_hr, posted_min, posted_sec, sep = ':')`.
+    -   Define a new variable which combines the exact date and time of day a loan request was posted:\
+        `post_date = ymd_hms(paste(post_dt, post_time, sep = ' '))`
+
+3.  Similar to `post_date`, define a new variable called `fund_date` that reports the exact date and time at which each loan was *funded* (not *posted*).
+
+4.  Define a new variable called `days_to_fund = difftime(fund_date, post_date, units = "days")` which records the number of days between the time a loan was posted and the time it was funded.
+
+5.  Get information about the `countries.region` for the partner of each loan from the `partners` dataset. NOTE: `partners` and `loans` have many variable names in common. To avoid conflicts, simplify the `partners` dataset to just 2 columns before connecting it to `loans`.
+
+6.  Keep only the following columns: `loan_id, status, funded_amount, paid_amount, sector, countries.region, location.country, lat, lon, partner_id, post_date, fund_date, days_to_fund`
+
+```{r}
+# Define loans_2
+
+loans_2 <- read_excel("loans_2.xlsx")
+
+# Confirm that loans_2 has 9884 rows and 13 columns
+
+dim(loans_2)
+```
+
+
+## Exercise 3: Kiva loans (Part 2)
+
+### Part a
+
+```{r}
+# Show the top 5 countries by number of loans
+loans_2 %>%
+  count(location.country) %>%
+  slice_max(n, n = 5)
+
+# Show the top 5 countries by total funded loan amount
+loans_2 %>%
+  group_by(location.country) %>%
+  summarize(total_funded = sum(funded_amount)) %>%
+  arrange(desc(total_funded)) %>%
+  head(5)
+```
+
+### Part b
+
+Plot the mean loan size in each sector (y-axis) vs the number of loans in each sector (x-axis). Represent each sector by its name (text), not a point. HINT: You'll have to calculate the mean loan size and number of loans in each sector before you can plot them.
+
+```{r}
+sector_summary <- loans_2 %>%
+  group_by(sector) %>%
+  summarize(mean_loan = mean(funded_amount),
+            num_loans = n())
+
+ggplot(sector_summary, aes(x = num_loans, y = mean_loan, label = sector)) +
+  geom_text(size = 4, color = "pink4") +
+  scale_x_log10(labels = scales::comma) +
+  scale_y_continuous(labels = scales::dollar) +
+  labs(title = "Mean loan size vs. number of loans by sector",
+       x = "# of loans",
+       y = "Mean loan size") +
+  theme_minimal(base_size = 14)
+```
+
+
+## Exercise: funding time (Optional)
+
+NOTE: This exercise won't be graded, but it is strongly recommended as additional practice for the quiz.
+
+How many days does it take borrowers to get a loan funded? Let's explore the `days_to_fund` variable in the `loans_2`.
+
+### Part a
+
+Construct a univariate visualization of `days_to_fund`.
+
+```{r}
+ggplot(loans_2, aes(x = as.numeric(days_to_fund))) +
+  geom_histogram(binwidth = 2, fill = "pink", color = "white") +
+  labs(title = "Days to fund a loan",
+       x = "Days to fund",
+       y = "Number of loans")
+```
+
+### Part b
+
+Construct a plot of `days_to_fund` (y-axis) vs `funded_amount` (x-axis) for each loan in `loans_2`.
+
+```{r}
+loans_2 %>%
+  filter(!is.na(days_to_fund)) %>%
+  ggplot(aes(x = funded_amount, y = as.numeric(days_to_fund))) +
+  geom_point(alpha = 0.3, color = "hotpink") +
+  labs(title = "Days to fund vs. funded amount",
+       x = "Funded amount",
+       y = "Days to fund")
+```
+
+### Part c
+
+Construct a plot of `days_to_fund` (y-axis) vs `funded_amount` (x-axis) in each `countries.region`. Don't represent each loan on this plot. Rather, include curves to represent the trends in each region.
+
+```{r}
+ggplot(loans_2, aes(x = funded_amount, y = as.numeric(days_to_fund), color = countries.region)) +
+  geom_smooth(se = FALSE) +
+  labs(title = "Days to fund vs. funded amount, by region",
+       x = "Funded amount",
+       y = "Days to fund",
+       color = "Region")
+```
+
+### Part d
+
+Summarize, in words, some takeaway messages from parts a-c about how long it takes to get a loan funded.
+
+> Looking at all graphs, most loans are funded quickly, and A few loans take much longer.
+
+
+## Finalize Work
+
+Congratulations 🎉 You're done with Part 1 of Homework 6. Don't forget Part 2 (the HW6-P2 template).
+
+To submit: click **Render**, open the generated HTML file to check that it looks right, then use **GitHub Desktop** to commit and push *both* this `.qmd` file and its HTML file. Remember: if it is not pushed, it is not submitted.  See [Submission Procedure on the HW Instructions page](https://hash-mac.github.io/ds112site-f26/hws/hw-instructions.html#submission-procedure) for the detailed steps.

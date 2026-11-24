@@ -2,4 +2,26 @@
 title: "Personal Visualization Journey"
 ---
 
-Add content here
+```{r}
+library(ggplot2)
+library(readxl)
+PVJ_1_ <- read_excel("~/Downloads/PVJ (1).xlsx")
+
+names(PVJ_1_)
+```
+
+
+
+```{r}
+
+ggplot(PVJ_1_, aes(x = Day, y = Sleep, color = Exercise)) +
+  geom_point(size = 4) +
+  geom_line(aes(group = Exercise)) +
+  labs(title = "How Rested I Felt After Gym vs. Volleyball",
+       x = "Day of Experiment", y = "Sleep Quality (1-5)") +
+  theme_minimal()
+```
+
+```{r}
+```
+

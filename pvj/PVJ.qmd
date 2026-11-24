@@ -1,0 +1,87 @@
+---
+title: "PVJ"
+---
+
+```{r}
+library(readxl)
+library(readxl)
+library(dplyr)
+library(stringr)
+library(ggplot2)
+library(forcats)
+Access_Log_Activity <- read_excel("~/Downloads/Access Log Activity.xlsx")
+
+
+
+```
+
+```{r}
+Access_Log_Activity <- read_excel("~/Downloads/Access Log Activity.xlsx")
+
+apps <- c("CHROME", "CALENDAR_APP", "DOCS_APP",
+          "GMAIL_APP", "OTHER_APP", "SAFARI")
+#geom_text(data = medians,
+          #aes(app, median_per_day, label = median_per_day),
+          #vjust = -2.5, size = 3.5, inherit.aes = FALSE)
+
+daily <- Access_Log_Activity %>%
+mutate(
+  app = str_extract(str_trim(`User Agent String`), "^[A-Z_]+(?=\\.)"),
+    day = as.Date(`Activity Timestamp`)
+  ) %>%
+  filter(app %in% apps) %>%
+  count(app, day)
+
+
+ggplot(daily, aes(app, n, fill = app)) +
+  geom_boxplot(show.legend = FALSE) +
+  scale_y_log10() +
+  labs(
+    title = "Gezelle's Distribution of Daily Computer Activity by App",
+    subtitle = str_wrap(
+      "Chrome was the highest with a median of about 12,280 events per day, followed by Gmail (811) and Docs (366). Calendar, Other Apps, and Safari were used far less.",
+      width = 90),
+    caption = paste0("Author: Gezelle  |  Date created: ",
+                     format(Sys.Date(), "%B 18, %Y"),
+                     "  |  Data source: Access Log Activity.xlsx from Google Takeout"),
+    x = "",
+    y = "# of Times in App"
+  ) +
+  theme_minimal()
+
+
+```
+
+```{r}
+
+
+daily <- Access_Log_Activity %>%
+  mutate(
+    app = str_extract(str_trim(`User Agent String`), "^[A-Z_]+(?=\\.)"),
+    day = as.Date(`Activity Timestamp`)
+  ) %>%
+  filter(app %in% apps) %>%
+  count(app, day) %>%
+  mutate(app = fct_reorder(app, n, .fun = median, .desc = TRUE))   # <- new line
+
+ggplot(daily, aes(app, n, fill = app)) +
+  geom_boxplot(show.legend = FALSE) +
+  scale_y_log10() +
+   labs(
+    title = "Gezelle's Distribution of Daily Computer Activity by App",
+    subtitle = str_wrap(
+      "Chrome was the highest with a median of about 12,280 events per day, followed by Gmail (811) and Docs (366). Calendar, Other Apps, and Safari were used far less.",
+      width = 90),
+    caption = paste0("Author: Gezelle  |  Date created: ",
+                     format(Sys.Date(), "%B 18, %Y"),
+                     "  |  Data source: Access Log Activity.xlsx from Google Takeout"),
+    x = "",
+    y = "# of Times in App"
+  ) +
+  theme_minimal()
+  
+  
+```
+
+```
+
